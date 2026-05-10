@@ -31,7 +31,8 @@ hr {
 #img_fatec,
 #img_logo,
 #img_main,
-.img_red_bar {
+.img_red_bar,
+#img_github {
   width: auto;
   height: clamp(30px, 5vw, 60px);
   max-width: 100%;
@@ -48,6 +49,13 @@ hr {
 .img_red_bar {
   height: clamp(10px, 1vw, 20px);
   margin: 5px 0;
+}
+#img_github {
+  height: clamp(60px, 1vw, 120px);
+  margin: 5px 0;
+  background-color: white;
+  border: 2px solid #000;
+  border-radius: 50%;
 }
 #main_section {
   display: flex;
@@ -191,4 +199,12 @@ hr {
 }
 #annex_section .carousel-wrap {
   margin-top: 1.5rem;
+}
+
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: black;
 }
