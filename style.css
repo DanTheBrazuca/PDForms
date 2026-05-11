@@ -1,15 +1,14 @@
-/* Global reset */
 * {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Header styling */
 #header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
 }
 hr {
   border: none;
@@ -117,6 +116,14 @@ hr {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   height: 100%;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.form-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 .form-card .head {
   background: #b00a18;

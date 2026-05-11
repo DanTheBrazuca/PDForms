@@ -2,9 +2,188 @@
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Anexo-I</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>PDForms - Anexo I</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="anexo.css" />
+    <script src="anexo.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <header id="header">
+      <div id="header_left">
+        <img src="../images/sao_paulo.png" alt="São Paulo" id="img_sao_paulo" />
+      </div>
+      <div id="header_right">
+        <img
+          src="../images/fatec_zona_leste.png"
+          alt="Fatec Zona Leste"
+          id="img_fatec"
+        />
+        <img
+          src="../images/logo_pdforms.png"
+          alt="Logo do PDForms"
+          id="img_logo"
+        />
+      </div>
+    </header>
+    <hr />
+    <main class="page">
+      <section class="panel">
+        <header class="panel__header">
+          <h1>Anexo-I</h1>
+        </header>
+
+        <div class="panel__topbar">
+          <button type="button" id="btnVoltar" class="btn btn-secondary">
+            Voltar
+          </button>
+        </div>
+
+        <section class="form-section" id="formSection">
+          <form id="anexoIForm" novalidate>
+            <div class="field">
+              <label for="faculdade">FACULDADE DE TECNOLOGIA</label>
+              <input
+                type="text"
+                id="faculdade"
+                name="faculdade"
+                placeholder="Nome da faculdade"
+              />
+            </div>
+
+            <div class="grid grid-2">
+              <div class="field">
+                <label for="docente">Docente</label>
+                <input
+                  type="text"
+                  id="docente"
+                  name="docente"
+                  placeholder="Docente"
+                />
+              </div>
+
+              <div class="field">
+                <label for="matricula">Matrícula</label>
+                <input
+                  type="text"
+                  id="matricula"
+                  name="matricula"
+                  placeholder="Matrícula"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-2">
+              <div class="field">
+                <label for="categoria">Categoria</label>
+                <input
+                  type="text"
+                  id="categoria"
+                  name="categoria"
+                  placeholder="Categoria"
+                />
+              </div>
+
+              <div class="field">
+                <label for="turnoGeral">Regime de trabalho</label>
+                <div class="mini-row">
+                  <input
+                    type="text"
+                    id="horaAula"
+                    name="horaAula"
+                    value="hora-aula"
+                    class="mini-input"
+                  />
+                  <input
+                    type="text"
+                    id="regimeTrabalho"
+                    name="regimeTrabalho"
+                    placeholder="Regime"
+                    class="mini-input"
+                  />
+                </div>
+                <small class="help-text">
+                  Regime de jornada nos termos da Portaria GDS 58/2008
+                </small>
+              </div>
+            </div>
+
+            <div class="section-title">
+              <p>
+                Carga horária indeterminada na unidade Sede e nas demais Fatecs
+              </p>
+            </div>
+
+            <div class="table-wrap">
+              <table class="horas-table">
+                <thead>
+                  <tr>
+                    <th>Disciplina</th>
+                    <th>Carga horária</th>
+                    <th>Turno</th>
+                    <th>Curso ou Departamento</th>
+                    <th>Fatec</th>
+                    <th class="col-action"></th>
+                  </tr>
+                </thead>
+
+                <tbody id="disciplinasBody"></tbody>
+
+                <tfoot>
+                  <tr class="total-row">
+                    <td>TOTAL</td>
+                    <td><span id="totalCargaHoraria">0</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+
+            <div class="table-actions">
+              <button type="button" id="btnAdicionarLinha" class="btn btn-add">
+                +
+              </button>
+            </div>
+
+            <div class="grid grid-2 bottom-grid">
+              <div class="field">
+                <label for="local">Local</label>
+                <input
+                  type="text"
+                  id="local"
+                  name="local"
+                  placeholder="Local"
+                />
+              </div>
+
+              <div class="field">
+                <label for="data">Data</label>
+                <input type="date" id="data" name="data" />
+              </div>
+            </div>
+
+            <div class="submit-row">
+              <button type="submit" class="btn btn-primary btn-save">
+                Salvar
+              </button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+    <footer id="footer">
+      <img src="../images/sao_paulo.png" alt="São Paulo" />
+      <a
+        href="https://github.com/DanTheBrazuca/PDForms"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="../images/github.png" alt="GitHub" id="img_github" />
+      </a>
+    </footer>
+  </body>
 </html>

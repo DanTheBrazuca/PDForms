@@ -1,0 +1,286 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --red: #b80c1b;
+  --red-dark: #930713;
+  --text: #2f2f2f;
+  --muted: #6b7280;
+  --border: #d6d6d6;
+  --bg: #f2f2f2;
+  --white: #ffffff;
+  --shadow: 0 14px 35px rgba(0, 0, 0, 0.16);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.page {
+  min-height: 100vh;
+  padding: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.panel {
+  width: 100%;
+  max-width: 980px;
+  background: var(--white);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.panel__header {
+  background: var(--red);
+  color: white;
+  text-align: center;
+  padding: 22px 16px;
+}
+
+.panel__header h1 {
+  font-size: clamp(1.5rem, 2vw, 2.15rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.panel__topbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 14px 18px 0;
+}
+
+.auth-box,
+.form-section {
+  padding: 18px;
+}
+
+.auth-box h2 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.auth-box p,
+.help-text,
+.status {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.auth-box .field {
+  margin-top: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 11px 12px;
+  font-size: 0.98rem;
+  outline: none;
+  background: #fff;
+}
+
+input:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(184, 12, 27, 0.08);
+}
+
+.error {
+  min-height: 18px;
+  color: #d10000;
+  font-size: 0.85rem;
+}
+
+.grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.mini-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.mini-input {
+  flex: 1;
+}
+
+.section-title {
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+.section-title p {
+  font-size: 0.98rem;
+  color: #444;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border-radius: 6px;
+}
+
+.horas-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.horas-table thead th {
+  background: #aab0b4;
+  color: white;
+  text-align: left;
+  padding: 10px 8px;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.horas-table td {
+  border: 1px solid #cfcfcf;
+  padding: 6px;
+  vertical-align: middle;
+}
+
+.horas-table tbody input {
+  border-radius: 0;
+  border: 0;
+  padding: 10px 8px;
+  width: 100%;
+  box-shadow: none;
+}
+
+.total-row td {
+  font-weight: 700;
+  background: #fafafa;
+}
+
+.col-action {
+  width: 44px;
+}
+
+.row-remove {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 6px;
+  background: #e9ecef;
+  color: #444;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.row-remove:hover {
+  background: #d9dde1;
+}
+
+.table-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--red);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--red-dark);
+}
+
+.btn-secondary {
+  background: var(--red);
+  color: #fff;
+  padding: 10px 16px;
+}
+
+.btn-secondary:hover {
+  background: var(--red-dark);
+}
+
+.btn-add {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--red);
+  color: #fff;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.btn-add:hover {
+  background: var(--red-dark);
+}
+
+.submit-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.btn-save {
+  min-width: 180px;
+  padding: 12px 18px;
+  font-size: 1rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.bottom-grid {
+  align-items: start;
+  margin-top: 18px;
+}
+
+@media (max-width: 760px) {
+  .page {
+    padding: 12px;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .panel__topbar {
+    padding: 12px 14px 0;
+  }
+
+  .auth-box,
+  .form-section {
+    padding: 14px;
+  }
+}
