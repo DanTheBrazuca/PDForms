@@ -1,0 +1,49 @@
+annexes/anexo-v.html
+  s_e9e55cdf8530cd::t_3baa7f6effc288 7,12-29
+  s_e9e55cdf8530cd::t_f3c8892c761e94 11,31-41
+annexes/anexo-iii.html
+  s_e9e55cdf8530cd::t_f3c8892c761e94 11,31-41
+  s_e9e55cdf8530cd::t_3baa7f6effc288 7,12-29
+annexes/anexo-i.html
+  s_e9e55cdf8530cd::t_e48fa0ad3f31bf 179-185
+  s_e9e55cdf8530cd::t_3baa7f6effc288 8-10,12-24
+  s_e9e55cdf8530cd::t_12f21a8557ee4a 43
+annexes/anexo-ii.html
+  s_e9e55cdf8530cd::t_3baa7f6effc288 7,12-29
+  s_e9e55cdf8530cd::t_f3c8892c761e94 11,31-41
+annexes/anexo-viii.html
+  s_e9e55cdf8530cd::t_f3c8892c761e94 11,31-41
+  s_e9e55cdf8530cd::t_3baa7f6effc288 7,12-29
+main.js
+  s_e9e55cdf8530cd::t_34658d99f93a34 2,11,20,25,28,31
+annexes/anexo-ix.html
+  s_e9e55cdf8530cd::t_f3c8892c761e94 11,31-41
+  s_e9e55cdf8530cd::t_3baa7f6effc288 7,12-29
+annexes/anexo-x.html
+  s_e9e55cdf8530cd::t_f3c8892c761e94 11,31-41
+  s_e9e55cdf8530cd::t_3baa7f6effc288 7,12-29
+annexes/anexo.js
+  s_e9e55cdf8530cd::t_34658d99f93a34 8-55,82-118,136
+  s_e9e55cdf8530cd::t_2196a35fa38a14 68,124
+style.css
+  s_e9e55cdf8530cd::t_52bdae795b7fe6 119-126
+annexes/anexo-vii.html
+  s_e9e55cdf8530cd::t_3baa7f6effc288 7,12-29
+  s_e9e55cdf8530cd::t_f3c8892c761e94 11,31-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "e0e148b3bc410976aeffb420a8c4184a7c3c0bb6",
+  "prompts": {},
+  "sessions": {
+    "s_e9e55cdf8530cd": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "25ccd0c9-246a-4844-9e8a-db9259a8f094",
+        "model": "unknown"
+      },
+      "human_author": "DanTheBrazuca <dars120308@gmail.com>"
+    }
+  }
+}
