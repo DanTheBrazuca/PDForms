@@ -27,7 +27,98 @@
       </div>
     </header>
     <hr />
-    <!-- <main></main> -->
+    <main class="page">
+      <section class="panel">
+        <header class="panel__header"><h1>Anexo-V</h1></header>
+        <div class="panel__topbar">
+          <button type="button" id="btnBack" class="btn btn-secondary">
+            Voltar
+          </button>
+        </div>
+
+        <section class="form-section">
+          <form id="annexForm">
+            <div class="inline-row mb-10">
+              <label>FACULDADE DE TECNOLOGIA DE</label>
+              <input type="text" name="faculdade" class="input-grow" />
+            </div>
+
+            <div class="inline-row">
+              <label>Número do edital:</label>
+              <input
+                type="text"
+                name="edital_num"
+                class="input-xs"
+                placeholder="Nº"
+              />
+              <input
+                type="text"
+                name="edital_ano"
+                class="input-sm"
+                placeholder="ano"
+              />
+            </div>
+
+            <p class="section-heading">Classificação/resultado:</p>
+            <div class="table-wrap">
+              <table class="horas-table table-v">
+                <thead>
+                  <tr>
+                    <th>Classif.</th>
+                    <th>Nome do Candidato</th>
+                    <th>RG do Candidato</th>
+                    <th>Aulas nesta Fatec</th>
+                    <th>Contrato</th>
+                    <th>Pontos</th>
+                    <th class="col-action"></th>
+                  </tr>
+                </thead>
+                <tbody id="tableRows"></tbody>
+              </table>
+            </div>
+            <div class="table-actions">
+              <button type="button" id="btnAddRow" class="btn btn-add">
+                +
+              </button>
+            </div>
+
+            <div class="grid grid-2 mt-20">
+              <div class="field">
+                <label>Docente selecionado</label
+                ><input type="text" name="docente_nome" />
+              </div>
+              <div class="field">
+                <label>RG</label><input type="text" name="docente_rg" />
+              </div>
+            </div>
+
+            <div class="indeferidos-container">
+              <p class="section-heading">Relação de candidatos indeferidos:</p>
+              <div id="indeferidosList" class="indeferidos-list"></div>
+              <button
+                type="button"
+                id="btnAddIndeferido"
+                class="btn btn-add"
+                style="margin-top: 10px"
+              >
+                +
+              </button>
+            </div>
+
+            <div class="date-footer-row">
+              <span class="date-city">São Paulo,</span>
+              <input type="date" name="data_final" />
+            </div>
+
+            <div class="submit-row">
+              <button type="submit" class="btn btn-primary btn-save">
+                Salvar
+              </button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
     <footer id="footer">
       <img src="../images/sao_paulo.png" alt="São Paulo" />
       <a

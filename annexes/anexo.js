@@ -1,142 +1,129 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const btnVoltar = document.getElementById("btnVoltar");
-  const form = document.getElementById("anexoIForm");
-  const disciplinasBody = document.getElementById("disciplinasBody");
-  const totalCargaHoraria = document.getElementById("totalCargaHoraria");
-  const btnAdicionarLinha = document.getElementById("btnAdicionarLinha");
+  const btnBack = document.getElementById("btnBack");
+  const form = document.getElementById("annexForm");
+  if (!form) return;
 
-  /* Cria célula da tabela */
-  function createInputCell(name, placeholder, type = "text") {
-    const td = document.createElement("td");
+  const tableRows = document.getElementById("tableRows");
+  const btnAddRow = document.getElementById("btnAddRow");
+  const indeferidosList = document.getElementById("indeferidosList");
+  const btnAddIndeferido = document.getElementById("btnAddIndeferido");
+
+  // Funções de criação de elementos
+  function createInput(type, name, placeholder, value = "") {
     const input = document.createElement("input");
     input.type = type;
     input.name = name;
     input.placeholder = placeholder;
-    td.appendChild(input);
-    return td;
+    input.value = value;
+    return input;
   }
 
+  // Adicionar linha na tabela (Lógica dinâmica por anexo)
   function addRow(data = {}) {
-    /* Insere nova linha disciplina */
+    if (!tableRows) return;
     const tr = document.createElement("tr");
+    const isAnexoV = document.title.includes("Anexo V");
 
-    const disciplinaTd = createInputCell("disciplina[]", "Disciplina", "text");
-    disciplinaTd.querySelector("input").value = data.disciplina || "";
+    if (isAnexoV) {
+      // Estrutura específica Anexo V
+      const count = tableRows.children.length + 1;
+      tr.innerHTML = `
+        <td>${count}º</td>
+        <td><input type="text" name="candidato_nome[]" value="${data.nome || ""}"></td>
+        <td><input type="text" name="candidato_rg[]" value="${data.rg || ""}"></td>
+        <td><input type="checkbox" name="aulas_fatec[]" ${data.aulas ? "checked" : ""}></td>
+        <td>
+          <select name="contrato[]" style="width:100%; padding:8px; border:1px solid #ddd;">
+            <option value="selecionar">selecionar</option>
+            <option value="C.T." ${data.contrato === "C.T." ? "selected" : ""}>C.T.</option>
+            <option value="P.S." ${data.contrato === "P.S." ? "selected" : ""}>P.S.</option>
+          </select>
+        </td>
+        <td><input type="number" name="pontos[]" value="${data.pontos || "0"}"></td>
+        <td><button type="button" class="row-remove">×</button></td>
+      `;
+    } else {
+      // Estrutura padrão (Anexo I)
+      tr.innerHTML = `
+        <td><input type="text" name="disciplina[]" value="${data.disciplina || ""}"></td>
+        <td><input type="number" name="carga[]" step="0.5" value="${data.carga || ""}"></td>
+        <td><input type="text" name="turno[]" value="${data.turno || ""}"></td>
+        <td><input type="text" name="curso[]" value="${data.curso || ""}"></td>
+        <td><input type="text" name="fatec[]" value="${data.fatec || ""}"></td>
+        <td><button type="button" class="row-remove">×</button></td>
+      `;
+      tr.querySelector('input[name="carga[]"]').addEventListener(
+        "input",
+        updateTotal,
+      );
+    }
 
-    const cargaTd = createInputCell("carga[]", "Carga horária", "number");
-    const cargaInput = cargaTd.querySelector("input");
-    /* Configurações input de carga */
-    cargaInput.min = "0";
-    cargaInput.step = "0.5";
-    cargaInput.value = data.carga || "";
-
-    const turnoTd = createInputCell("turno[]", "Turno", "text");
-    turnoTd.querySelector("input").value = data.turno || "";
-
-    const cursoTd = createInputCell("curso[]", "Curso ou Departamento", "text");
-    cursoTd.querySelector("input").value = data.curso || "";
-
-    const fatecTd = createInputCell("fatec[]", "Fatec", "text");
-    fatecTd.querySelector("input").value = data.fatec || "";
-
-    const actionTd = document.createElement("td");
-    /* Botão para remover linha */
-    const removeBtn = document.createElement("button");
-    removeBtn.type = "button";
-    removeBtn.className = "row-remove";
-    removeBtn.textContent = "×";
-    actionTd.appendChild(removeBtn);
-
-    tr.append(disciplinaTd, cargaTd, turnoTd, cursoTd, fatecTd, actionTd);
-
-    disciplinasBody.appendChild(tr);
-
-    cargaInput.addEventListener("input", updateTotal);
-    /* Remover linha e recalcular */
-    removeBtn.addEventListener("click", () => {
+    tr.querySelector(".row-remove").addEventListener("click", () => {
       tr.remove();
-      if (disciplinasBody.children.length === 0) {
-        addRow();
-      }
+      if (isAnexoV) refreshRankings();
       updateTotal();
     });
 
+    tableRows.appendChild(tr);
     updateTotal();
   }
 
-  function updateTotal() {
-    /* Recalcula total horas */
-    const rows = Array.from(disciplinasBody.querySelectorAll("tr"));
-    let total = 0;
-
-    rows.forEach((row) => {
-      const cargaInput = row.querySelector('input[name="carga[]"]');
-      const value = parseFloat(cargaInput?.value || "0");
-      if (!Number.isNaN(value)) total += value;
+  function refreshRankings() {
+    Array.from(tableRows.children).forEach((tr, i) => {
+      tr.cells[0].textContent = `${i + 1}º`;
     });
-
-    totalCargaHoraria.textContent = total.toString();
   }
 
-  function gatherFormData() {
-    /* Coleta dados do formulário */
-    const rows = Array.from(disciplinasBody.querySelectorAll("tr"));
-
-    return {
-      faculdade: document.getElementById("faculdade").value.trim(),
-      docente: document.getElementById("docente").value.trim(),
-      matricula: document.getElementById("matricula").value.trim(),
-      categoria: document.getElementById("categoria").value.trim(),
-      horaAula: document.getElementById("horaAula").value.trim(),
-      regimeTrabalho: document.getElementById("regimeTrabalho").value.trim(),
-      local: document.getElementById("local").value.trim(),
-      data: document.getElementById("data").value,
-      disciplinas: rows.map((row) => ({
-        disciplina: row
-          .querySelector('input[name="disciplina[]"]')
-          .value.trim(),
-        carga: row.querySelector('input[name="carga[]"]').value.trim(),
-        turno: row.querySelector('input[name="turno[]"]').value.trim(),
-        curso: row.querySelector('input[name="curso[]"]').value.trim(),
-        fatec: row.querySelector('input[name="fatec[]"]').value.trim(),
-      })),
-      totalCargaHoraria: totalCargaHoraria.textContent,
-    };
+  // Lista de Indeferidos (Anexo V)
+  function addIndeferido(rg = "") {
+    if (!indeferidosList) return;
+    const div = document.createElement("div");
+    div.className = "indeferido-item";
+    div.innerHTML = `
+      <input type="text" name="indeferido_rg[]" placeholder="RG do Candidato" value="${rg}">
+      <button type="button" class="row-remove">×</button>
+    `;
+    div
+      .querySelector(".row-remove")
+      .addEventListener("click", () => div.remove());
+    indeferidosList.appendChild(div);
   }
 
-  btnVoltar.addEventListener("click", () => {
-    window.location.href = "../index.html";
+  function updateTotal() {
+    const totalHours = document.getElementById("totalHours");
+    if (!totalHours) return;
+    let total = 0;
+    tableRows.querySelectorAll('input[name="carga[]"]').forEach((input) => {
+      total += parseFloat(input.value || 0);
+    });
+    totalHours.textContent = total;
+  }
+
+  // Eventos de Botões
+  if (btnAddRow) btnAddRow.addEventListener("click", () => addRow());
+  if (btnAddIndeferido)
+    btnAddIndeferido.addEventListener("click", () => addIndeferido());
+
+  // Submit e LocalStorage (Mantido e adaptado)
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => {
+      if (key.endsWith("[]")) {
+        if (!data[key]) data[key] = [];
+        data[key].push(value);
+      } else {
+        data[key] = value;
+      }
+    });
+    localStorage.setItem(`pdforms-${document.title}`, JSON.stringify(data));
+    alert("Salvo com sucesso!");
   });
 
-  btnAdicionarLinha.addEventListener("click", () => addRow());
+  // Inicialização
+  if (tableRows && tableRows.children.length === 0) addRow();
+  if (indeferidosList && indeferidosList.children.length === 0) addIndeferido();
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const data = gatherFormData();
-
-    /* Valida campos obrigatórios */
-    if (!data.faculdade || !data.docente || !data.local || !data.data) {
-      alert("Preencha os campos obrigatórios antes de salvar.");
-      return;
-    }
-
-    /* Verifica disciplina preenchida */
-    const hasAtLeastOneDisciplina = data.disciplinas.some(
-      (item) =>
-        item.disciplina || item.carga || item.turno || item.curso || item.fatec,
-    );
-
-    if (!hasAtLeastOneDisciplina) {
-      alert("Adicione pelo menos uma disciplina.");
-      return;
-    }
-
-    localStorage.setItem("pdforms-anexo-i-draft", JSON.stringify(data));
-    /* Salva rascunho em cache */
-    alert("Formulário salvo com sucesso!");
-    console.log("Anexo I salvo:", data);
-  });
-
-  addRow();
+  btnBack?.addEventListener("click", () => window.history.back());
 });

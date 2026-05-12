@@ -79,6 +79,7 @@ body {
   margin-top: 14px;
 }
 
+/* Field padrão (vertical) */
 .field {
   display: flex;
   flex-direction: column;
@@ -90,6 +91,98 @@ body {
   color: #444;
 }
 
+/* Linha inline: label + input(s) na mesma linha */
+.inline-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.inline-row .inline-label {
+  font-size: 0.95rem;
+  color: #444;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.inline-row input.input-xs {
+  width: 52px;
+}
+
+.inline-row input.input-sm {
+  width: 90px;
+}
+
+.inline-row input.input-md {
+  width: 160px;
+}
+
+.inline-row input.input-grow {
+  flex: 1;
+  min-width: 120px;
+}
+
+/* Grupo de campos com label acima e inputs inline */
+.member-group {
+  margin-top: 10px;
+}
+
+.member-group .member-label {
+  font-size: 0.93rem;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.member-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.member-row input.member-name {
+  flex: 1;
+}
+
+.member-row .rg-label {
+  font-size: 0.88rem;
+  color: var(--muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.member-row input.rg-input {
+  width: 140px;
+}
+
+/* Seções */
+.section-heading {
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 18px;
+  margin-bottom: 6px;
+}
+
+.suplente-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.suplente-row .suplente-label {
+  font-size: 0.93rem;
+  color: #444;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.suplente-row input {
+  flex: 1;
+}
+
+/* Inputs globais */
 input {
   width: 100%;
   border: 1px solid var(--border);
@@ -257,13 +350,28 @@ input:focus {
   font-size: 1rem;
 }
 
-.hidden {
-  display: none !important;
-}
-
 .bottom-grid {
   align-items: start;
   margin-top: 18px;
+}
+
+.date-footer-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.date-footer-row .date-city {
+  font-size: 0.95rem;
+  color: #444;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.date-footer-row input[type="date"] {
+  width: auto;
+  min-width: 160px;
 }
 
 @media (max-width: 760px) {
@@ -283,4 +391,94 @@ input:focus {
   .form-section {
     padding: 14px;
   }
+
+  .member-row {
+    flex-wrap: wrap;
+  }
+
+  .member-row input.rg-input {
+    width: 100%;
+  }
+
+  .inline-row {
+    flex-wrap: wrap;
+  }
+
+  .inline-row input.input-xs,
+  .inline-row input.input-sm,
+  .inline-row input.input-md {
+    width: 100%;
+  }
+  .schedule-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.options-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.option-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.93rem;
+  cursor: pointer;
+}
+
+.option-item input[type="checkbox"],
+.option-item input[type="radio"] {
+  width: auto;
+  margin-top: 3px;
+}
+
+.table-v th,
+.table-v td {
+  text-align: center;
+}
+
+.table-v input[type="radio"] {
+  width: auto;
+  display: inline-block;
+}
+
+.indeferidos-container {
+  margin-top: 15px;
+}
+
+.indeferidos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.indeferido-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.indeferido-item input {
+  max-width: 250px;
+}
+
+.w-full {
+  width: 100%;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  align-items: flex-end;
+  margin-bottom: 15px;
 }

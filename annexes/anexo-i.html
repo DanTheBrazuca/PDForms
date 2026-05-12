@@ -35,13 +35,13 @@
         </header>
 
         <div class="panel__topbar">
-          <button type="button" id="btnVoltar" class="btn btn-secondary">
+          <button type="button" id="btnBack" class="btn btn-secondary">
             Voltar
           </button>
         </div>
 
         <section class="form-section" id="formSection">
-          <form id="anexoIForm" novalidate>
+          <form id="annexForm" novalidate>
             <div class="field">
               <label for="faculdade">FACULDADE DE TECNOLOGIA</label>
               <input
@@ -128,12 +128,12 @@
                   </tr>
                 </thead>
 
-                <tbody id="disciplinasBody"></tbody>
+                <tbody id="tableRows"></tbody>
 
                 <tfoot>
                   <tr class="total-row">
                     <td>TOTAL</td>
-                    <td><span id="totalCargaHoraria">0</span></td>
+                    <td><span id="totalHours">0</span></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -144,7 +144,7 @@
             </div>
 
             <div class="table-actions">
-              <button type="button" id="btnAdicionarLinha" class="btn btn-add">
+              <button type="button" id="btnAddRow" class="btn btn-add">
                 +
               </button>
             </div>
