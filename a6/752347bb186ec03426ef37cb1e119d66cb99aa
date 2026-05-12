@@ -1,0 +1,23 @@
+annexes/anexo-i.html
+  s_a2b94f04ee2e09::t_4387821bf083e3 38,44,131,136,147
+annexes/anexo.js
+  s_a2b94f04ee2e09::t_4387821bf083e3 2-3,58
+annexes/anexo-ii.html
+  s_a2b94f04ee2e09::t_4387821bf083e3 39-45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "a6752347bb186ec03426ef37cb1e119d66cb99aa",
+  "prompts": {},
+  "sessions": {
+    "s_a2b94f04ee2e09": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "572c0a4c-ff37-465b-97ee-f7d724f24a5e",
+        "model": "unknown"
+      },
+      "human_author": "DanTheBrazuca <dars120308@gmail.com>"
+    }
+  }
+}
