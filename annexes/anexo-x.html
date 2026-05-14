@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="anexo.css" />
     <script src="anexo.js" defer></script>
+    <script src="annex-verification/anexo-x-validation.js" defer></script>
   </head>
   <body>
     <header id="header">
@@ -27,7 +28,106 @@
       </div>
     </header>
     <hr />
-    <!-- <main></main> -->
+    <main class="page">
+      <section class="panel">
+        <header class="panel__header">
+          <h1>Anexo-X</h1>
+        </header>
+
+        <div class="panel__topbar">
+          <button type="button" id="btnBack" class="btn btn-secondary">
+            Voltar
+          </button>
+          <button type="button" id="btnClear" class="btn btn-secondary">
+            Limpar Formulário
+          </button>
+        </div>
+
+        <section class="form-section" id="formSection">
+          <form id="annexForm" novalidate>
+            <!-- Fatec Sede -->
+            <div class="member-group">
+              <p class="member-label">Fatec Sede:</p>
+              <div class="member-row">
+                <input
+                  type="text"
+                  name="fatec_sede"
+                  class="member-name"
+                  data-required
+                />
+                <span class="rg-label">OP:</span>
+                <input type="text" name="op_fatec" class="rg-input" />
+              </div>
+            </div>
+
+            <!-- Numero Edital -->
+            <div class="inline-row" style="margin-top: 14px">
+              <label for="portaria_num">Número do edital:</label>
+              <input
+                type="text"
+                id="edital_num"
+                name="edital_num"
+                class="input-xs"
+                placeholder="Nº"
+              />
+              <input
+                type="text"
+                id="edital_ano"
+                name="edital_ano"
+                class="input-sm"
+                placeholder="ano"
+              />
+            </div>
+
+            <!-- Docente -->
+            <div class="field">
+              <label for="candidato">Docente:</label>
+              <input type="text" id="docente" name="docente" />
+            </div>
+
+            <!-- Categoria -->
+            <p class="section-heading">Categoria — Professor Ensino Superior</p>
+            <div class="grid grid-2 mt-20">
+              <div class="field">
+                <label>Ref./Grau:</label>
+                <input type="text" name="ref_grau" />
+              </div>
+              <div class="field">
+                <label>Matrícula</label>
+                <input type="text" name="matricula" />
+              </div>
+            </div>
+
+            <br />
+
+            <!-- Disciplina -->
+            <div class="suplente-row">
+              <span class="suplente-label">Disciplina:</span>
+              <input type="text" name="disciplina" />
+            </div>
+
+            <!-- Area -->
+            <div class="suplente-row">
+              <span class="suplente-label">Área:</span>
+              <input type="text" name="area" />
+            </div>
+
+            <!-- Curso -->
+            <div class="suplente-row">
+              <span class="suplente-label">Curso:</span>
+              <input type="text" name="curso" />
+            </div>
+
+            <!-- Botao Salvar -->
+            <div class="submit-row">
+              <button type="submit" class="btn btn-primary btn-save">
+                Salvar
+              </button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
     <footer id="footer">
       <img src="../images/sao_paulo.png" alt="São Paulo" />
       <a

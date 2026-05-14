@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="anexo.css" />
     <script src="anexo.js" defer></script>
+    <script src="annex-verification/anexo-viii-validation.js" defer></script>
   </head>
   <body>
     <header id="header">
@@ -27,7 +28,172 @@
       </div>
     </header>
     <hr />
-    <!-- <main></main> -->
+    <main class="page">
+      <section class="panel">
+        <header class="panel__header">
+          <h1>Anexo-VIII</h1>
+        </header>
+
+        <div class="panel__topbar">
+          <button type="button" id="btnBack" class="btn btn-secondary">
+            Voltar
+          </button>
+          <button type="button" id="btnClear" class="btn btn-secondary">
+            Limpar Formulário
+          </button>
+        </div>
+
+        <section class="form-section" id="formSection">
+          <form id="annexForm" novalidate>
+            <!-- Faculdade -->
+            <div class="inline-row">
+              <label for="faculdade">FACULDADE DE TECNOLOGIA</label>
+              <input
+                type="text"
+                name="faculdade"
+                class="input-grow"
+                placeholder="Nome da faculdade"
+                data-required
+              />
+            </div>
+
+            <div class="inline-row" style="margin-top: 14px">
+              <label for="portaria_num">Número do edital:</label>
+              <input
+                type="text"
+                id="edital_num"
+                name="edital_num"
+                class="input-xs"
+                placeholder="Nº"
+              />
+              <input
+                type="text"
+                id="edital_ano"
+                name="edital_ano"
+                class="input-sm"
+                placeholder="ano"
+              />
+              <label for="edital_tempo" class="inline-label" required
+                >Tempo:</label
+              >
+              <select name="edital_tempo" id="edital_tempo" class="input-md">
+                <option value="" disabled selected>Selecionar</option>
+                <option value="DETERMINADO">Determinado</option>
+                <option value="INDETERMINADO">Indeterminado</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="candidato">Candidato:</label>
+              <input
+                type="text"
+                id="candidato"
+                name="candidato"
+                placeholder="Candidato"
+              />
+            </div>
+
+            <div class="field">
+              <div class="section-title">
+                <p>Conformidade:</p>
+              </div>
+              <div class="">
+                <div class="">
+                  <input
+                    type="radio"
+                    id="conformidade"
+                    name="conformidade"
+                    value="Conformidade"
+                  />
+                  <label for="conformidade"> Conformidade </label>
+                </div>
+                <div class="">
+                  <input
+                    type="radio"
+                    id="inconformidade"
+                    name="inconformidade"
+                    value="Inconformidade"
+                  />
+                  <label for="conformidade"> Inconformidade </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="section-title">
+              <p>Justificar</p>
+              <span> (somente no caso de não conformidade): </span>
+            </div>
+
+            <div class="field">
+              <textarea
+                name="justificativa"
+                id="justificativa"
+                placeholder="Justificativa"
+              >
+              </textarea>
+            </div>
+
+            <!-- Data final -->
+            <div class="date-footer-row">
+              <span class="date-city">São Paulo |</span>
+              <input type="date" name="data" data-required />
+            </div>
+
+            <!-- Presidente -->
+            <div class="member-group">
+              <p class="member-label">Prof(a). Presidente:</p>
+              <div class="member-row">
+                <input
+                  type="text"
+                  name="presidente_name"
+                  class="member-name"
+                  data-required
+                />
+                <span class="rg-label">RG:</span>
+                <input type="text" name="presidente_rg" class="rg-input" />
+              </div>
+            </div>
+
+            <!-- Prof(a) -->
+            <div class="member-group">
+              <p class="member-label">Prof(a).:</p>
+              <div class="member-row">
+                <input
+                  type="text"
+                  name="prof_name"
+                  class="member-name"
+                  data-required
+                />
+                <span class="rg-label">RG:</span>
+                <input type="text" name="prof_rg" class="rg-input" />
+              </div>
+            </div>
+
+            <!-- Tecnico administrativo -->
+            <div class="member-group">
+              <p class="member-label">Técnico Administrativo:</p>
+              <div class="member-row">
+                <input
+                  type="text"
+                  name="tecnico_name"
+                  class="member-name"
+                  data-required
+                />
+                <span class="rg-label">RG:</span>
+                <input type="text" name="tecnico_rg" class="rg-input" />
+              </div>
+            </div>
+
+            <!-- botao salvar -->
+            <div class="submit-row">
+              <button type="submit" class="btn btn-primary btn-save">
+                Salvar
+              </button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
     <footer id="footer">
       <img src="../images/sao_paulo.png" alt="São Paulo" />
       <a

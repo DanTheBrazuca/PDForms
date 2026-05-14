@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="anexo.css" />
     <script src="anexo.js" defer></script>
+    <script src="annex-verification/anexo-iii-validation.js" defer></script>
+    <script src="anexo.js" defer></script>
   </head>
   <body>
     <header id="header">
@@ -27,7 +29,514 @@
       </div>
     </header>
     <hr />
-    <!-- <main></main> -->
+
+    <main class="page">
+      <section class="panel">
+        <header class="panel__header">
+          <h1>Anexo-III</h1>
+        </header>
+
+        <div class="panel__topbar">
+          <button type="button" id="btnBack" class="btn btn-secondary">
+            Voltar
+          </button>
+          <button type="button" id="btnClear" class="btn btn-secondary">
+            Limpar Formulário
+          </button>
+        </div>
+
+        <section class="form-section">
+          <form id="annexForm" novalidate>
+            <!-- Faculdade -->
+            <div class="inline-row">
+              <label>FACULDADE DE TECNOLOGIA DE</label>
+              <input
+                type="text"
+                name="faculdade"
+                class="input-grow"
+                placeholder="Nome da faculdade"
+              />
+            </div>
+
+            <!-- Número do edital + Tempo -->
+            <div class="inline-row" style="margin-top: 14px">
+              <label class="inline-label">Número do edital</label>
+              <input
+                type="text"
+                name="edital_num"
+                class="input-xs"
+                placeholder="Nº"
+              />
+              <input
+                type="text"
+                name="edital_ano"
+                class="input-sm"
+                placeholder="ano"
+              />
+              <label class="inline-label">Tempo:</label>
+              <select name="edital_tempo" class="input-md">
+                <option value="" disabled selected>selecionar</option>
+                <option value="DETERMINADO">Determinado</option>
+                <option value="INDETERMINADO">Indeterminado</option>
+              </select>
+            </div>
+
+            <!-- Data de Início -->
+            <div class="field" style="margin-top: 14px; max-width: 340px">
+              <label>Data de Início:</label>
+              <input type="date" name="data_inicio" />
+            </div>
+
+            <!-- Área -->
+            <div class="field" style="margin-top: 14px">
+              <label>Área:</label>
+              <input type="text" name="area_geral" placeholder="Área" />
+            </div>
+
+            <!-- Versão -->
+            <div class="versao-row">
+              <label>Versão:</label>
+              <input
+                type="text"
+                name="versao"
+                class="input-grow"
+                placeholder="Versão"
+              />
+              <span class="versao-de">de</span>
+              <input
+                type="text"
+                name="versao_ano"
+                class="input-xs"
+                placeholder="0000"
+                maxlength="4"
+              />
+            </div>
+
+            <!-- Curso Superior de Graduação -->
+            <p class="section-heading" style="margin-top: 18px">
+              Curso Superior de Graduação:
+            </p>
+            <div class="options-group">
+              <label class="option-item">
+                <input type="radio" name="graduacao" value="Tecnológica" />
+                Tecnológica
+              </label>
+              <label class="option-item">
+                <input type="radio" name="graduacao" value="Bacharelado" />
+                Bacharelado
+              </label>
+              <label class="option-item">
+                <input type="radio" name="graduacao" value="Licenciatura" />
+                Licenciatura
+              </label>
+            </div>
+
+            <!-- Curso e Turno -->
+            <div class="inline-row" style="margin-top: 14px">
+              <label class="inline-label">Curso:</label>
+              <input
+                type="text"
+                name="curso"
+                class="input-grow"
+                placeholder="Curso"
+              />
+              <label class="inline-label">Turno:</label>
+              <input
+                type="text"
+                name="turno"
+                class="input-md"
+                placeholder="Turno"
+              />
+            </div>
+
+            <!-- Pertencimento AMS -->
+            <p class="section-heading" style="margin-top: 18px">
+              Pertencimento ao Programa Articulação Médio-Superior – AMS:
+            </p>
+            <div class="options-group">
+              <label class="option-item">
+                <input type="radio" name="ams" value="sim" /> sim
+              </label>
+              <label class="option-item">
+                <input type="radio" name="ams" value="não" /> não
+              </label>
+            </div>
+
+            <!-- Natureza da disciplina -->
+            <p class="section-heading" style="margin-top: 18px">
+              Natureza da disciplina:
+            </p>
+            <div class="options-group">
+              <label class="option-item">
+                <input type="radio" name="natureza" value="Básica" /> Básica
+              </label>
+              <label class="option-item">
+                <input
+                  type="radio"
+                  name="natureza"
+                  value="Profissionalizante"
+                />
+                Profissionalizante
+              </label>
+              <label class="option-item">
+                <input
+                  type="radio"
+                  name="natureza"
+                  value="Línguas estrangeiras"
+                />
+                Línguas estrangeiras
+              </label>
+            </div>
+
+            <!-- Em virtude de -->
+            <p class="section-heading" style="margin-top: 18px">
+              Em virtude de:
+            </p>
+            <div class="options-group">
+              <label class="option-item">
+                <input
+                  type="checkbox"
+                  name="virtude[]"
+                  value="afastamento_deliberacao"
+                />
+                Autorização do afastamento nos termos da Deliberação Ceeteps n.
+                4/1997 ou Deliberação Ceeteps n. 5/1997
+              </label>
+              <label class="option-item">
+                <input
+                  type="checkbox"
+                  name="virtude[]"
+                  value="designacao_funcao"
+                />
+                Designação para assumir função ou cargo em confiança
+              </label>
+              <label class="option-item">
+                <input
+                  type="checkbox"
+                  name="virtude[]"
+                  value="decisao_partidaria"
+                />
+                Decisão partidária para concorrência a cargo eletivo (cargos
+                políticos)
+              </label>
+              <label class="option-item">
+                <input
+                  type="checkbox"
+                  name="virtude[]"
+                  value="projeto_administracao_central"
+                />
+                Autorização para realização de projetos de interesse da
+                Administração Central
+              </label>
+              <label class="option-item">
+                <input
+                  type="checkbox"
+                  name="virtude[]"
+                  value="projeto_orgaos_publicos"
+                />
+                Autorização para realização de projetos de interesse de outros
+                órgãos públicos
+              </label>
+              <label class="option-item">
+                <input type="checkbox" name="virtude[]" value="divisao_turma" />
+                Autorização para divisão de turma ou abertura de turma
+                extraordinária
+              </label>
+              <label class="option-item">
+                <input
+                  type="checkbox"
+                  name="virtude[]"
+                  value="jornada_integral"
+                />
+                Autorização para desenvolvimento de Projeto em Regime de Jornada
+                Integral
+              </label>
+              <label class="option-item">
+                <input
+                  type="checkbox"
+                  name="virtude[]"
+                  value="instrucao_cgesg"
+                />
+                Autorização nos termos do Artigo 6º, §2º da Instrução CGESG n.
+                03/2026
+              </label>
+              <div class="option-item" style="align-items: center">
+                <input
+                  type="checkbox"
+                  name="virtude[]"
+                  value="licenca"
+                  id="chk_licenca"
+                />
+                <label for="chk_licenca" style="white-space: nowrap"
+                  >Licença — especificar:</label
+                >
+                <input
+                  type="text"
+                  name="licenca_especificacao"
+                  placeholder="Licença"
+                  class="input-grow"
+                  style="margin-left: 4px"
+                />
+              </div>
+            </div>
+
+            <!-- Sendo -->
+            <p class="section-heading" style="margin-top: 18px">Sendo:</p>
+            <div class="options-group">
+              <label class="option-item">
+                <input
+                  type="radio"
+                  name="sendo"
+                  value="com_pagamento_acima_200h"
+                />
+                com possibilidade de atribuição excepcional, com pagamento acima
+                das 200h mensais
+              </label>
+              <label class="option-item">
+                <input
+                  type="radio"
+                  name="sendo"
+                  value="sem_pagamento_acima_200h"
+                />
+                sem possibilidade de atribuição excepcional, com pagamento acima
+                das 200h mensais
+              </label>
+            </div>
+
+            <!-- Bem como -->
+            <p class="section-heading" style="margin-top: 18px">Bem como:</p>
+            <div class="options-group">
+              <label class="option-item">
+                <input type="radio" name="bem_como" value="com_ampliacao" />
+                com possibilidade de ampliação de carga horária em mais de duas
+                disciplinas no mesmo semestre do mesmo curso na mesma Fatec
+              </label>
+              <label class="option-item">
+                <input type="radio" name="bem_como" value="sem_ampliacao" />
+                sem possibilidade de ampliação de carga horária em mais de duas
+                disciplinas no mesmo semestre do mesmo curso na mesma Fatec.
+              </label>
+            </div>
+
+            <!-- Disciplina -->
+            <p class="section-heading" style="margin-top: 22px">Disciplina:</p>
+
+            <div class="field" style="margin-top: 10px">
+              <label>Nome:</label>
+              <input type="text" name="disciplina_nome" placeholder="Nome" />
+            </div>
+
+            <div class="field" style="margin-top: 10px">
+              <label>Área(s):</label>
+              <input type="text" name="disciplina_area" placeholder="Área" />
+            </div>
+
+            <div class="field" style="margin-top: 10px">
+              <label>Carga-horária:</label>
+              <input
+                type="text"
+                name="disciplina_carga"
+                placeholder="Carga-horária"
+              />
+            </div>
+
+            <!-- Dias da aula -->
+            <div class="field" style="margin-top: 10px">
+              <label>Dia(s) da(s) aula(s):</label>
+              <div class="dias-grid">
+                <label
+                  ><input type="checkbox" name="dias[]" value="Segunda-feira" />
+                  Segunda-feira</label
+                >
+                <label
+                  ><input type="checkbox" name="dias[]" value="Terça-feira" />
+                  Terça-feira</label
+                >
+                <label
+                  ><input type="checkbox" name="dias[]" value="Quarta-feira" />
+                  Quarta-feira</label
+                >
+                <label
+                  ><input type="checkbox" name="dias[]" value="Quinta-feira" />
+                  Quinta-feira</label
+                >
+                <label
+                  ><input type="checkbox" name="dias[]" value="Sexta-feira" />
+                  Sexta-feira</label
+                >
+                <label
+                  ><input type="checkbox" name="dias[]" value="Sábado" />
+                  Sábado</label
+                >
+              </div>
+            </div>
+
+            <!-- Horário -->
+            <div class="field" style="margin-top: 10px">
+              <label>Horário das aulas:</label>
+              <div class="horario-row">
+                <input type="time" name="horario_inicio" value="00:00" />
+                <span>até</span>
+                <input type="time" name="horario_fim" value="00:00" />
+              </div>
+            </div>
+
+            <!-- Formato das aulas -->
+            <div class="field" style="margin-top: 10px">
+              <label>Formato das aulas:</label>
+              <div class="formato-row">
+                <div class="fmt-group">
+                  <input
+                    type="number"
+                    name="pct_presencial"
+                    min="0"
+                    max="100"
+                    value="0"
+                  />
+                  <span>% presencial</span>
+                </div>
+                <div class="fmt-group">
+                  <input
+                    type="number"
+                    name="pct_remoto_sincrono"
+                    min="0"
+                    max="100"
+                    value="0"
+                  />
+                  <span>% remoto síncrono</span>
+                </div>
+                <div class="fmt-group">
+                  <input
+                    type="number"
+                    name="pct_remoto_assincrono"
+                    min="0"
+                    max="100"
+                    value="0"
+                  />
+                  <span>% remoto assíncrono</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Objetivo -->
+            <div class="field" style="margin-top: 10px">
+              <label>Objetivo:</label>
+              <textarea name="objetivo" placeholder="Objetivo"></textarea>
+            </div>
+
+            <!-- Versão ementa -->
+            <div class="versao-row" style="margin-top: 10px">
+              <label>Versão de</label>
+              <input
+                type="text"
+                name="ementa_versao_ano"
+                class="input-xs"
+                placeholder="0000"
+                maxlength="4"
+              />
+            </div>
+
+            <!-- Ementa -->
+            <div class="field" style="margin-top: 10px">
+              <label>Ementa:</label>
+              <textarea name="ementa" placeholder="Ementa"></textarea>
+            </div>
+
+            <!-- 2 - Indeferimento -->
+            <p class="section-heading" style="margin-top: 22px">
+              2 - Indeferimento:
+            </p>
+            <div class="table-wrap">
+              <table class="indeferimento-table">
+                <thead>
+                  <tr>
+                    <th>Exame</th>
+                    <th>Pontuação mínima</th>
+                    <th>Validade</th>
+                    <th class="col-action"></th>
+                  </tr>
+                </thead>
+                <tbody id="indeferimentoRows"></tbody>
+              </table>
+            </div>
+            <div class="table-actions">
+              <button
+                type="button"
+                id="btnAddIndeferimento"
+                class="btn btn-add"
+              >
+                +
+              </button>
+            </div>
+
+            <!-- Datas do processo seletivo -->
+            <p class="section-heading" style="margin-top: 22px">Inscrições:</p>
+            <div class="date-range-row">
+              <span class="dr-label"></span>
+              <div class="dr-inner">
+                <span>Início:</span>
+                <input type="date" name="inscricoes_inicio" />
+                <span>Fim:</span>
+                <input type="date" name="inscricoes_fim" />
+              </div>
+            </div>
+
+            <p class="section-heading" style="margin-top: 14px">
+              Deferimento / Indeferimento:
+            </p>
+            <div class="date-range-row">
+              <span class="dr-label"></span>
+              <div class="dr-inner">
+                <span>Início:</span>
+                <input type="date" name="deferimento_inicio" />
+                <span>Fim:</span>
+                <input type="date" name="deferimento_fim" />
+              </div>
+            </div>
+
+            <p class="section-heading" style="margin-top: 14px">
+              Interposição de recursos:
+            </p>
+            <div class="date-range-row">
+              <span class="dr-label"></span>
+              <div class="dr-inner">
+                <span>Início:</span>
+                <input type="date" name="recursos_inicio" />
+                <span>Fim:</span>
+                <input type="date" name="recursos_fim" />
+              </div>
+            </div>
+
+            <p class="section-heading" style="margin-top: 14px">
+              Análise de recursos:
+            </p>
+            <div class="date-range-row">
+              <span class="dr-label"></span>
+              <div class="dr-inner">
+                <span>Início:</span>
+                <input type="date" name="analise_inicio" />
+                <span>Fim:</span>
+                <input type="date" name="analise_fim" />
+              </div>
+            </div>
+
+            <!-- Data final -->
+            <div class="date-footer-row" style="margin-top: 18px">
+              <span class="date-city">São Paulo</span>
+              <input type="date" name="data_final" />
+            </div>
+
+            <!-- Salvar -->
+            <div class="submit-row">
+              <button type="submit" class="btn btn-primary btn-save">
+                Salvar
+              </button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+
     <footer id="footer">
       <img src="../images/sao_paulo.png" alt="São Paulo" />
       <a

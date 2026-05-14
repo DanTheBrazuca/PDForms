@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="anexo.css" />
     <script src="anexo.js" defer></script>
+    <script src="annex-verification/anexo-i-validation.js" defer></script>
   </head>
   <body>
     <header id="header">
@@ -38,17 +39,22 @@
           <button type="button" id="btnBack" class="btn btn-secondary">
             Voltar
           </button>
+          <button type="button" id="btnClear" class="btn btn-secondary">
+            Limpar Formulário
+          </button>
         </div>
 
         <section class="form-section" id="formSection">
           <form id="annexForm" novalidate>
-            <div class="field">
+            <!-- Faculdade -->
+            <div class="inline-row">
               <label for="faculdade">FACULDADE DE TECNOLOGIA</label>
               <input
                 type="text"
-                id="faculdade"
                 name="faculdade"
+                class="input-grow"
                 placeholder="Nome da faculdade"
+                data-required
               />
             </div>
 
