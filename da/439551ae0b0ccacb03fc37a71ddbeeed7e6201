@@ -1,0 +1,65 @@
+annexes/anexo.js
+  s_3651f428014991::t_71eec5be2c2e7e 173-186,188-199
+  s_3651f428014991::t_17dceb3b476d08 262-263,265
+  s_3651f428014991::t_be7042c89e3f32 112-113,115,117-119,121-123,125-127,129-131,133-135,137-139,141-143,145-154
+  s_3651f428014991::t_77cabe33800de3 200-205,207-209,211-212,214-217,219-222,224-227,229-232,234-237,239-242,244-249,252,257-261
+annexes/anexo-i.html
+  s_3651f428014991::t_f2cd628f1c41b5 11
+  s_3651f428014991::t_aacf39a6805e5c 42-44
+annexes/annex-verification/anexo-ix-validation.js
+  s_3651f428014991::t_11280065920cbe 1-5,9,12-19,21-25,27-29,31-34,36,38-41,43-46,49-52,54-56,61,63-66,68,70-80
+annexes/anexo-iii.html
+  s_3651f428014991::t_728cba0ace6bfd 43-45
+  s_3651f428014991::t_c8d20e751db770 10-11
+annexes/annex-verification/anexo-i-validation.js
+  s_3651f428014991::t_56a2b6c9015c65 1-5,9,18-25,27-31,33-35,37-40,42,44-47,49-52,55-58,60-62,67,69-72,74,76-78,80,82-92
+annexes/anexo-ii.html
+  s_3651f428014991::t_a8ccacfb690307 11
+  s_3651f428014991::t_69b4dca3cc11ce 43-45
+annexes/annex-verification/anexo-viii-validation.js
+  s_3651f428014991::t_2d765414539f1b 1-5,9,12-19,21-25,27-29,31-34,36,38-41,43-46,49-52,54-56,61,63-66,68,70-80
+annexes/anexo-vii.html
+  s_3651f428014991::t_0894ef64ed3258 41-43
+  s_3651f428014991::t_8ecf7e6c493be7 10
+annexes/anexo-ix.html
+  s_3651f428014991::t_074b3c4aa1e661 10
+  s_3651f428014991::t_7e5ebc44c30246 41-43
+annexes/anexo.css
+  s_3651f428014991::t_e04fe73fa87f90 474,490
+  s_3651f428014991::t_8e66f7c60dc499 452-473,475-489,491-664
+annexes/annex-verification/anexo-iii-validation.js
+  s_3651f428014991::t_00912072693c07 1-5,9,29-36,38-42,44-48,50-55,57-60,62-69,71-77,79,82-83,86-94,96-104,106,108-111,113-119,128-134,136-138,141-144,146-148,156-157,159-162,166-168,171-174,176,178-187
+annexes/annex-verification/anexo-vii-validation.js
+  s_3651f428014991::t_72ed6e790ac3eb 1-5,9,12-19,21-25,27-29,31-34,36,38-41,43-46,49-52,54-56,61,63-66,68,70-80
+annexes/anexo-viii.html
+  s_3651f428014991::t_e9a74d7cad9d02 41-43
+  s_3651f428014991::t_bba91de8af3736 10
+annexes/anexo-x.html
+  s_3651f428014991::t_2f1116046faee0 41-43
+  s_3651f428014991::t_bcc75fb4b066fd 10
+annexes/anexo-v.html
+  s_3651f428014991::t_3cdc087bc4e366 38-40
+  s_3651f428014991::t_f7b335e1fce40a 10
+annexes/annex-verification/anexo-x-validation.js
+  s_3651f428014991::t_6be50c57d34d96 1-5,9,12-19,21-25,27-29,31-34,36,38-41,43-46,49-52,54-56,61,63-66,68,70-80
+annexes/annex-verification/anexo-ii-validation.js
+  s_3651f428014991::t_c4320b739e3a82 1-5,9,12-19,21-25,27-29,31-34,36,38-41,43-46,49-52,54-56,61,63-66,68,70-80
+annexes/annex-verification/anexo-v-validation.js
+  s_3651f428014991::t_d89b39490f1d4b 1-5,9,16-23,25-29,31-39,41,43,45-46,48-51,53-56,58-61,64-67,69-71,77-78,80-83,86-89,91,93,96,98-111
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "da439551ae0b0ccacb03fc37a71ddbeeed7e6201",
+  "prompts": {},
+  "sessions": {
+    "s_3651f428014991": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "3ff0cb29-6308-4db8-b424-220e76093f74",
+        "model": "gpt-5-mini"
+      },
+      "human_author": "DanTheBrazuca <dars120308@gmail.com>"
+    }
+  }
+}
