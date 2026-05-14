@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+﻿document.addEventListener("DOMContentLoaded", () => {
   const btnBack = document.getElementById("btnBack");
   const form = document.getElementById("annexForm");
   if (!form) return;
@@ -164,7 +164,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     localStorage.setItem(`pdforms-${document.title}`, JSON.stringify(data));
     alert("Salvo com sucesso!");
+    showGeneratePopup();
   });
+
+  function showGeneratePopup() {
+    const popup = document.createElement("div");
+    popup.className = "save-popup-overlay";
+    popup.innerHTML = `<div class="save-popup"><h2>Gerar formulário?</h2><div class="popup-buttons"><button class="generate-btn">Gerar ✓</button><button class="view-btn">Visualizar 👁</button></div><button class="cancel-btn">Cancelar</button></div>`;
+    document.body.appendChild(popup);
+    const style = document.createElement("style");
+    style.textContent = `.save-popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;z-index:9999}.save-popup{background:#eee;padding:40px;border-radius:25px;width:700px;max-width:90%;text-align:center}.popup-buttons{display:flex;gap:15px;justify-content:center;margin:25px 0}.generate-btn,.view-btn,.cancel-btn{border:none;padding:15px 30px;border-radius:10px;font-size:22px;cursor:pointer}.generate-btn{background:#11b56b;color:#fff}.view-btn{background:#55636d;color:#fff}.cancel-btn{background:#c80018;color:#fff;width:63%}`;
+    document.head.appendChild(style);
+    popup.querySelector(".cancel-btn").onclick = () => popup.remove();
+    popup.querySelector(".generate-btn").onclick = () =>
+      alert("Função gerar pode ser conectada aqui");
+    popup.querySelector(".view-btn").onclick = () =>
+      alert("Função visualizar pode ser conectada aqui");
+  }
 
   // Inicialização
   if (tableRows && tableRows.children.length === 0) addRow();
