@@ -1,0 +1,20 @@
+annexes/anexo.js
+  s_3651f428014991::t_8cd4f48878335b 1
+  s_3651f428014991::t_6551dc1caa25a0 167
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "eca59a4a8e6a91d4be1dc384ea0a388a29f97cd7",
+  "prompts": {},
+  "sessions": {
+    "s_3651f428014991": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "3ff0cb29-6308-4db8-b424-220e76093f74",
+        "model": "gpt-5-mini"
+      },
+      "human_author": "DanTheBrazuca <dars120308@gmail.com>"
+    }
+  }
+}
