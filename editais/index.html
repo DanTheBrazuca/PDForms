@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,323 +47,119 @@
             padding:8px;
         }
 </style>
-<body>    
-<div class="content">
+<body>
+    <div class="content">
         <div class="cent">
-            
             <form id="form">
-    
+              
+                <div style="text-align: center; font-weight: bold; margin-bottom: 20px;">
+                    FACULDADE DE TECNOLOGIA DE <input type="text" id="campus" name="campus" placeholder="__________________" style="border:none; border-bottom: 1px solid #000; outline: none; font-weight: bold; width: 250px;"/>
+                </div>
+
+                <div style="text-align: center; font-weight: bold; margin-bottom: 20px;">
+                    DIVULGAÇÃO DO RESULTADO FINAL DO EDITAL DE OFERECIMENTO DE AULAS Nº <input type="number" id="numEdital" name="numEdital" placeholder="______" style="border:none; border-bottom: 1px solid #000; outline: none; font-weight: bold; width: 80px;"/>
+                </div>
+
+              
+                <p style="text-align: justify; line-height: 1.6;">
+                    O(A) Coordenador(a) <input type="text" id="coordenador" name="coordenador" placeholder="___________________________" style="border:none; border-bottom: 1px solid #000; outline: none; width: 250px;"/> da Faculdade de Tecnologia de <input type="text" id="campus_corpo" name="campus" placeholder="__________________" style="border:none; border-bottom: 1px solid #000; outline: none; width: 150px;"/>, no uso de suas atribuições, faz saber aos interessados o resultado final do Edital de oferecimento de aulas nº <input type="number" id="numEdital_corpo" name="numEdital" placeholder="______" style="border:none; border-bottom: 1px solid #000; outline: none; width: 80px;"/>.
+                </p>
+
+                <p style="margin-top: 20px;">
+                    Classificação nos termos de Deliberação Ceeteps n. 109/2026 e da instrução CGESG n. 03/2026:
+                </p>
+
+              
+                <table border="1" style="width: 100%; border-collapse: collapse; margin-top: 10px; text-align: center;">
+                    <thead>
+                        <tr>
+                            <th style="font-size: 12px;">Classificação</th>
+                            <th style="font-size: 12px;">Nome do(a) Candidato(a)</th>
+                            <th style="font-size: 12px;">RG do candidato(a)</th>
+                            <th style="font-size: 12px;">Assinale "X" se o(a) Candidato(a) possui aulas nesta Fatec</th>
+                            <th style="font-size: 12px;">Contrato (determinado/indeterminado)</th>
+                            <th style="font-size: 12px;">Pontuação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1º</td><td> <input type="text" id="nomeDocente" name="nomeDocente" placeholder="____________________________"/></td><td><input type="text" id="rgDocente" name="rgDocente" placeholder="________________" style="border:none; border-bottom: 1px solid #000; outline: none; width: 15%;"/></td><td><input type="text" id="aulaFatec" name="aulaFatec" placeholder="____________________________"/></td><td><input type="text" id="tipoContrato" name="tipoContrato" placeholder="____________________________"/></td><td><input type="number" id="pont" name="pont" placeholder="____________________________"/></td></tr>
+                        <tr><td>2º</td><td> <input type="text" id="nomeDocente" name="nomeDocente" placeholder="____________________________"/></td><td><input type="text" id="rgDocente" name="rgDocente" placeholder="________________" style="border:none; border-bottom: 1px solid #000; outline: none; width: 15%;"/></td><td><input type="text" id="aulaFatec" name="aulaFatec" placeholder="____________________________"/></td><td><input type="text" id="tipoContrato" name="tipoContrato" placeholder="____________________________"/></td><td><input type="number" id="pont" name="pont" placeholder="____________________________"/></td></tr>
+                        <tr><td>3º</td><td> <input type="text" id="nomeDocente" name="nomeDocente" placeholder="____________________________"/></td><td><input type="text" id="rgDocente" name="rgDocente" placeholder="________________" style="border:none; border-bottom: 1px solid #000; outline: none; width: 15%;"/></td><td><input type="text" id="aulaFatec" name="aulaFatec" placeholder="____________________________"/></td><td><input type="text" id="tipoContrato" name="tipoContrato" placeholder="____________________________"/></td><td><input type="number" id="pont" name="pont" placeholder="____________________________"/></td></tr>
+                        <tr><td>4º</td><td> <input type="text" id="nomeDocente" name="nomeDocente" placeholder="____________________________"/></td><td><input type="text" id="rgDocente" name="rgDocente" placeholder="________________" style="border:none; border-bottom: 1px solid #000; outline: none; width: 15%;"/></td><td><input type="text" id="aulaFatec" name="aulaFatec" placeholder="____________________________"/></td><td><input type="text" id="tipoContrato" name="tipoContrato" placeholder="____________________________"/></td><td><input type="number" id="pont" name="pont" placeholder="____________________________"/></td></tr>
+                        <tr><td>5º</td><td> <input type="text" id="nomeDocente" name="nomeDocente" placeholder="____________________________"/></td><td><input type="text" id="rgDocente" name="rgDocente" placeholder="________________" style="border:none; border-bottom: 1px solid #000; outline: none; width: 15%;"/></td><td><input type="text" id="aulaFatec" name="aulaFatec" placeholder="____________________________"/></td><td><input type="text" id="tipoContrato" name="tipoContrato" placeholder="____________________________"/></td><td><input type="number" id="pont" name="pont" placeholder="____________________________"/></td></tr>
+                    </tbody>
+                </table>
+
+                <p style="margin-top: 20px; text-align: justify;">
+                    Em cumprimento ao disposto na Deliberação Ceeteps n. 109/2026 e na instrução CGESG n. 03/2026, o docente selecionado foi:
+                    <br>
+                    <input type="text" id="nomeDocente_sel" name="nomeDocente" placeholder="__________________________________________________________________" style="border:none; border-bottom: 1px solid #000; outline: none; width: 80%; margin-top: 5px;"/> 
+                    RG nº <input type="text" id="rg_sel" name="rgDocente" placeholder="________________" style="border:none; border-bottom: 1px solid #000; outline: none; width: 15%;"/>
+                </p>
+
+                <p style="margin-top: 20px; font-weight: bold;">Relação de candidatos indeferidos:</p>
+
+                <table border="1" style="width: 50%; border-collapse: collapse; margin: 10px auto; text-align: center;">
+                    <thead>
+                        <tr>
+                            <th>RG do candidato</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td style="height: 25px;">
+                        <input type="text" id="rgDocente" name="rgDocente" placeholder="________________" style="border:none; border-bottom: 1px solid #000; outline: none; width: 15%;"/>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td style="height: 25px;">
+                        <input type="text" id="rgDocente" name="rgDocente" placeholder="________________" style="border:none; border-bottom: 1px solid #000; outline: none; width: 15%;"/>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td style="height: 25px;">
+                        <input type="text" id="rgDocente" name="rgDocente" placeholder="________________" style="border:none; border-bottom: 1px solid #000; outline: none; width: 15%;"/>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td style="height: 25px;">
+                        <input type="text" id="rgDocente" name="rgDocente" placeholder="________________" style="border:none; border-bottom: 1px solid #000; outline: none; width: 15%;"/>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td style="height: 25px;">
+                        <input type="text" id="rgDocente" name="rgDocente" placeholder="________________" style="border:none; border-bottom: 1px solid #000; outline: none; width: 15%;"/>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>O docente classificado e convocado deverá dar o aceite por e-mail (para fXXXeditais@cps.sp.gov.br) em até três dias úteis</p>
+                
+                <div style="margin-top: 30px;">
+                    <input type="text" id="cidade" name="cidade" placeholder="Cidade" style="border:none; border-bottom: 1px solid #000; outline: none; width: 120px;"/>, 
+                    <input type="number" id="dia" name="dia" placeholder="00" style="border:none; border-bottom: 1px solid #000; outline: none; width: 30px;"/> de 
+                    <input type="text" id="mes" name="mes" placeholder="Mês" style="border:none; border-bottom: 1px solid #000; outline: none; width: 80px;"/> de 
+                    <input type="number" id="ano" name="ano" placeholder="2026" style="border:none; border-bottom: 1px solid #000; outline: none; width: 50px;"/>
+                </div>
+
+                
+
+                    <div style="width: 100%; display: flex; justify-content: space-between; margin-top: 20px;">
+                        <div style="text-align: left;">
+                            <input type="text" id="nomeDocente" name="nomeDocente" placeholder="____________________________" style="border:none; border-bottom: 1px solid #000; outline: none; width: 250px;"/><br>
+                            Prof(a).<br>
+                            Coordenador(a) da Fatec: <input type="text" id="coordenador" name="coordenador" placeholder="__________" style="border:none; border-bottom: 1px solid #000; outline: none; width: 100px;"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; text-align: center;">
+                    <button type="submit" id="btnEnviar">Enviar</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div style="text-align: center;"><label for="campus"><b>FACULDADE DE TECNOLOGIA DE</b> </label><input type="text" id="campus" name="campus" placeholder="__________________"/>
-        </div>
-    <p>
-
-    </p>
-    <p>
-
-    </p>
-         <b>DIVULGAÇÃO DO DEFERIMENTO/INDEFERIMENTO E CLASSIFICAÇÃO/RESULTADO DO <b>EDITAL Nº</b> </label><input type="number" id="numEdital" name="numEdital" placeholder="__________________"/>
-         DE OFERECIMENTO DE AULAS, POR TEMPO (selecionar DETERMINADO/INDETERMINADO). PARA A <div><label for="campus"><b>FACULDADE DE TECNOLOGIA DE</b> </label><input type="text" id="campus" name="campus" placeholder="__________________"/>
- DO CENTRO ESTADUAL DE EDUCAÇÃO TECNOLÓGICA "PAULA SOUZA"</b>
-         
-            <p></p>
-        <p>A Comissão Avaliadora responsável pelo processo de alteração de carga horária de docente do edital nº </label><input type="number" id="numEdital" name="numEdital" placeholder="__________________"/>
-            expedido pela <label for="campus">Faculdade de Tecnologia de </label><input type="text" id="campus" name="campus" placeholder="__________________"/>
-        no uso de suas atribuições, faz saber aos interessados a classificação/resultado bem como indeferimento, em conformidade com a Deliberação Ceeteps n. 109.2026 e a instrução CGESG n. 03/2026, nos seguintes termos<br>
-       <p></p>
-       <p>I) Da classificação/resultado:</p>
-       <table>
-        <tr>
-            <th>Classificação</th>
-            <th>Nome do(a) Candidato(a)</th>
-            <th>RG do candidato(a)</th>
-            <th>Assinale "X" se o(a) Candidato(a) possui aulas nesta Fatec</th>
-            <th>Contrato (determinado/indeterminado)</th>
-            <th>Pontuação</th>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        
-       </table>
-       <p></p>
-       <p>II) Do indeferimento:</p>
-
-       <table>
-        <tr>
-            <th>RG do candidato(a)</th>
-            <th>Justificativa do indeferimento</th>
-            
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-    
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-    
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-    
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-    
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-    
-        </tr>
-        
-       </table>
-
-       <p></p>
-       <p></p>
-        <div style="text-align: left;"><label for="dia"></label><input type="number" id="dia" name="dia" placeholder="__" style="text-align: right;"><label for="mes">de </label><input type="text" id="mes" name="mes" placeholder="__"/>
-        </div> </p>
-        <div style="text-align: center;"><label for="ano"> de 20</label><input type="number" id="ano" name="ano" placeholder="__"/>
-        </div>
-            <div style="text-align: center;"><label for="nomeDocente"> Prof(a).</label><input type="text" id="nomeDocente" name="nomeDocente" placeholder="__"/>
-                <p>Presidente</p>
-                <div style="text-align: center;"><label for="rgTecAdmin"> RG</label><input type="number" id="rgTecAdmin" name="rgTecAdmin" placeholder="__"/>
-</div>
-                            <div style="text-align: left;"><label for="nomeDocente"> Prof(a).</label><input type="text" id="nomeDocente" name="nomeDocente" placeholder="__"/>
-                                                            <div style="text-align: left;"><label for="rgDocente"> RG.</label><input type="number" id="rgocente" name="rgDocente" placeholder="__"/>
-
-
-                            <p></p>
-                            <div style="text-align: left;"><label for="nomeTecAdmin"> Técnico administrativo</label><input type="text" id="nomeTecAdmin" name="nomeTecAdmin" placeholder="__"/>
-                                                            <div style="text-align: left;"><label for="rgTecAdmin"> RG</label><input type="number" id="rgTecAdmin" name="rgTecAdmin" placeholder="__"/>
-</div>
-
-                  <button type="submit" id="btnEnviar">Enviar</button>
-
-                  
-    
-    </form>
     <script src="script.js" defer></script>
 </body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-</head>
-<style>
-    @page {
-            size: A4;
-            margin: 20mm;
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        .content {
-            width: 100%;
-            padding: 20mm;
-            box-sizing: border-box;
-            background-color: #f9f9f9;
-            border: 1px solid #ccc;
-            margin: 20px auto;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, p {
-            margin: 0 0 10px;
-        }
-        table{
-            border-collapse: collapse;
-            width: 100%;
-            text-align:center;
-
-        }
-        th{
-            border:1px solid black;
-            text-align: left;
-            padding:8px;
-            background-color: lightgray;
-
-        }
-        td{
-            border:1px solid black;
-            text-align: left;
-            padding:8px;
-        }
-</style>
-<body>    
-<div class="content">
-        <div class="cent">
-            
-            <form id="form">
-    
-    </div>
-    <div style="text-align: center;"><label for="campus"><b>FACULDADE DE TECNOLOGIA DE</b> </label><input type="text" id="campus" name="campus" placeholder="__________________"/>
-        </div>
-    <p>
-
-    </p>
-    <p>
-
-    </p>
-         <b>DIVULGAÇÃO DO DEFERIMENTO/INDEFERIMENTO E CLASSIFICAÇÃO/RESULTADO DO <b>EDITAL Nº</b> </label><input type="number" id="numEdital" name="numEdital" placeholder="__________________"/>
-         DE OFERECIMENTO DE AULAS, POR TEMPO (selecionar DETERMINADO/INDETERMINADO). PARA A <div><label for="campus"><b>FACULDADE DE TECNOLOGIA DE</b> </label><input type="text" id="campus" name="campus" placeholder="__________________"/>
- DO CENTRO ESTADUAL DE EDUCAÇÃO TECNOLÓGICA "PAULA SOUZA"</b>
-         
-            <p></p>
-        <p>A Comissão Avaliadora responsável pelo processo de alteração de carga horária de docente do edital nº </label><input type="number" id="numEdital" name="numEdital" placeholder="__________________"/>
-            expedido pela <label for="campus">Faculdade de Tecnologia de </label><input type="text" id="campus" name="campus" placeholder="__________________"/>
-        no uso de suas atribuições, faz saber aos interessados a classificação/resultado bem como indeferimento, em conformidade com a Deliberação Ceeteps n. 109.2026 e a instrução CGESG n. 03/2026, nos seguintes termos<br>
-       <p></p>
-       <p>I) Da classificação/resultado:</p>
-       <table>
-        <tr>
-            <th>Classificação</th>
-            <th>Nome do(a) Candidato(a)</th>
-            <th>RG do candidato(a)</th>
-            <th>Assinale "X" se o(a) Candidato(a) possui aulas nesta Fatec</th>
-            <th>Contrato (determinado/indeterminado)</th>
-            <th>Pontuação</th>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        
-       </table>
-       <p></p>
-       <p>II) Do indeferimento:</p>
-
-       <table>
-        <tr>
-            <th>RG do candidato(a)</th>
-            <th>Justificativa do indeferimento</th>
-            
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-    
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-    
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-    
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-    
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-    
-        </tr>
-        
-       </table>
-
-       <p></p>
-       <p></p>
-        <div style="text-align: left;"><label for="dia"></label><input type="number" id="dia" name="dia" placeholder="__" style="text-align: right;"><label for="mes">de </label><input type="text" id="mes" name="mes" placeholder="__"/>
-        </div> </p>
-        <div style="text-align: center;"><label for="ano"> de 20</label><input type="number" id="ano" name="ano" placeholder="__"/>
-        </div>
-            <div style="text-align: center;"><label for="nomeDocente"> Prof(a).</label><input type="text" id="nomeDocente" name="nomeDocente" placeholder="__"/>
-                <p>Presidente</p>
-                <div style="text-align: center;"><label for="rgTecAdmin"> RG</label><input type="number" id="rgTecAdmin" name="rgTecAdmin" placeholder="__"/>
-</div>
-                            <div style="text-align: left;"><label for="nomeDocente"> Prof(a).</label><input type="text" id="nomeDocente" name="nomeDocente" placeholder="__"/>
-                                                            <div style="text-align: left;"><label for="rgDocente"> RG.</label><input type="number" id="rgocente" name="rgDocente" placeholder="__"/>
-
-
-                            <p></p>
-                            <div style="text-align: left;"><label for="nomeTecAdmin"> Técnico administrativo</label><input type="text" id="nomeTecAdmin" name="nomeTecAdmin" placeholder="__"/>
-                                                            <div style="text-align: left;"><label for="rgTecAdmin"> RG</label><input type="number" id="rgTecAdmin" name="rgTecAdmin" placeholder="__"/>
-</div>
-
-                  <button type="submit" id="btnEnviar">Enviar</button>
-
-                  
-    
-    </form>
-    <script src="script.js" defer></script>
-</body>
->>>>>>> eaf77f5a31028ddc6003de89ca519144f4159899
 </html>
