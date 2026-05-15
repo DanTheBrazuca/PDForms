@@ -1,4 +1,4 @@
-﻿document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const btnBack = document.getElementById("btnBack");
   const form = document.getElementById("annexForm");
   if (!form) return;
@@ -181,11 +181,72 @@
     popup.querySelector(".view-btn").onclick = () =>
       alert("Função visualizar pode ser conectada aqui");
   }
+  function loadSavedData() {
+    const savedData = localStorage.getItem(`pdforms-${document.title}`);
+
+    if (!savedData) return;
+    const data = JSON.parse(savedData);
+
+    // Preencher inputs normais
+    Object.keys(data).forEach((key) => {
+      // Campos de array (tabelas)
+      if (key.endsWith("[]")) return;
+      const field = form.querySelector(`[name="${key}"]`);
+      if (!field) return;
+
+      if (field.type === "checkbox") {
+        field.checked = data[key];
+      } else {
+        field.value = data[key];
+      }
+    });
+
+    // Restaurar tabela dinâmica
+    if (data["disciplina[]"]) {
+      tableRows.innerHTML = "";
+
+      data["disciplina[]"].forEach((_, i) => {
+        addRow({
+          disciplina: data["disciplina[]"]?.[i] || "",
+          carga: data["carga[]"]?.[i] || "",
+          turno: data["turno[]"]?.[i] || "",
+          curso: data["curso[]"]?.[i] || "",
+          fatec: data["fatec[]"]?.[i] || "",
+        });
+      });
+    }
+
+    // Restaurar ranking (Anexo V / VII)
+    if (data["candidato_nome[]"]) {
+      tableRows.innerHTML = "";
+      data["candidato_nome[]"].forEach((_, i) => {
+        addRow({
+          nome: data["candidato_nome[]"]?.[i] || "",
+          rg: data["candidato_rg[]"]?.[i] || "",
+          aulas: data["aulas_fatec[]"]?.[i] || false,
+          contrato: data["contrato[]"]?.[i] || "",
+          pontos: data["pontos[]"]?.[i] || "0",
+        });
+      });
+    }
+
+    // Restaurar indeferidos
+    if (data["indeferido_rg[]"] && indeferidosList) {
+      indeferidosList.innerHTML = "";
+
+      data["indeferido_rg[]"].forEach((rg) => {
+        addIndeferido(rg);
+      });
+    }
+
+    updateTotal();
+  }
 
   // Inicialização
+  loadSavedData();
   if (tableRows && tableRows.children.length === 0) addRow();
   if (indeferidosList && indeferidosList.children.length === 0) addIndeferido();
-
+  
   // Anexo III: Tabela de Indeferimento
   const indeferimentoRows = document.getElementById("indeferimentoRows");
   const btnAddIndeferimento = document.getElementById("btnAddIndeferimento");
