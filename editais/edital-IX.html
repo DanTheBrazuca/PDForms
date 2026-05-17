@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #000000;
+        }
+        .content {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        
+        .logo-container {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .logo-container img {
+            height: 80px;
+            object-fit: contain;
+        }
+
+        h3, h4 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        h4 {
+            font-size: 12pt;
+        }
+
+        .text-center {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .text-justify {
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        
+        input[type="text"], input[type="number"] {
+            border: none;
+            border-bottom: 1px solid #000000;
+            background: transparent;
+            font-family: Arial, sans-serif;
+            font-size: 11pt;
+            padding: 0 5px;
+            outline: none;
+        }
+
+        .termo-aceite-box {
+            text-align: justify;
+            font-size: 11pt;
+            margin: 30px auto;
+            padding: 0 20px;
+            line-height: 1.8;
+        }
+
+        .data-container {
+            margin: 40px 0;
+        }
+
+        
+        .bloco-final {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>    
+<div class="content">
+
+    <form id="form">
+        
+        <div class="logo-container">
+            <img src="sao-paulo-governo-do-estado-logo-png_seeklogo-618362 (1).png" alt="logotipo">
+        </div>
+        
+        <div class="text-center">
+            <label for="campus"><b>FACULDADE DE TECNOLOGIA DE</b> </label>
+            <input type="text" id="campus" name="campus" style="width: 250px;" placeholder="__________________"/>
+        </div>
+        
+        <h4>CONVOCAÇÃO DE DOCENTE CLASSIFICADO</h4>
+        
+        <div class="text-center">
+            <label for="numEdital"><b>EDITAL DE OFERECIMENTO DE AULAS N.</b> </label>
+            <input type="number" id="numEdital" name="numEdital" style="width: 80px;" placeholder="____"/>, 
+            <b>Instrução CGESG n. 03/2026</b>
+        </div> 
+
+        <div class="text-justify">
+            Como resultado do processo de classificação referente ao Edital de Oferecimento de Aulas nº 
+            <input type="number" id="numEdital" name="numEdital" style="width: 80px;" placeholder="____"/>, 
+            o(a) Coordenador(a) da Fatec convoca para aceite (a ser dado por e-mail) da atribuição de aulas o docente:
+        </div>    
+        
+        <div class="text-justify">
+            Nome completo do docente, RG:
+        </div>
+        
+        <div class="text-justify">
+            O(A) Coordenador(a) da Fatec ainda informa que o docente deverá, em resposta a esta convocação, para lograr a alteração de carga horária, dar o aceite por e-mail, ao endereço eletrônico 
+            <input type="text" id="emailEdital" name="emailEdital" style="width: 250px;" placeholder="__________________"/>, 
+            no prazo de três dias úteis, com mensagem nos seguintes termos:
+        </div>
+        
+        <div class="termo-aceite-box">
+            <i>Dou o aceite nos termos da convocação recebida, informando que tomei ciência das condições do Edital e estou de acordo com suas normativas, sendo a documentação comprobatória, preteritamente apresentada para participar do certame, expressão da verdade, assumindo inteira responsabilidade pela documentação apresentada, sob as penas da lei.</i>
+        </div>
+        
+        <div class="data-container">
+            <input type="text" id="cidade" name="cidade" style="width: 150px; text-align: center;" placeholder="Cidade"/>, 
+            <input type="number" id="dia" name="dia" style="width: 40px; text-align: center;" placeholder="__"/> de 
+            <input type="text" id="mes" name="mes" style="width: 100px; text-align: center;" placeholder="mês"/> de 20<input type="number" id="ano" name="ano" style="width: 40px; text-align: center;" placeholder="__"/>.
+        </div>
+
+        <div class="bloco-final">
+            ____________________________________________________ Prof(a). <input type="text" id="nomeCoordenador" name="nomeCoordenador" style="width: 200px; border-bottom: none;" placeholder="XXX"/>
+            <div style="margin-top: 10px;">Coordenador(a) da Fatec</div>
+        </div>
+    
+    </form>
+</div>
+</body>
+</html>
