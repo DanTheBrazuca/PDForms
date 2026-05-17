@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Estrutura padrão (Anexo I)
       tr.innerHTML = `
         <td><input type="text" name="disciplina[]" value="${data.disciplina || ""}"></td>
-        <td><input type="number" name="carga[]" step="0.5" value="${data.carga || ""}"></td>
+        <td><input type="number" name="carga[]" step="0.5" value="${data.carga || ""}" data-numeric></td>
         <td><input type="text" name="turno[]" value="${data.turno || ""}"></td>
         <td><input type="text" name="curso[]" value="${data.curso || ""}"></td>
         <td><input type="text" name="fatec[]" value="${data.fatec || ""}"></td>
@@ -101,6 +101,187 @@ document.addEventListener("DOMContentLoaded", () => {
     totalHours.textContent = total;
   }
 
+  function loadSavedData() {
+    const saved = localStorage.getItem(`pdforms-${document.title}`);
+    if (!saved) return false;
+
+    let data;
+    try {
+      data = JSON.parse(saved);
+    } catch (error) {
+      return false;
+    }
+
+    for (const [key, value] of Object.entries(data)) {
+      if (key.endsWith("[]")) continue;
+      const elements = form.querySelectorAll(`[name="${key}"]`);
+      elements.forEach((input) => {
+        if (input.type === "checkbox" || input.type === "radio") {
+          input.checked = Array.isArray(value)
+            ? value.includes(input.value)
+            : input.value === value;
+        } else {
+          input.value = value;
+        }
+      });
+    }
+
+    if (tableRows) {
+      const isTableRanking =
+        document.title.includes("Anexo V") ||
+        document.title.includes("Anexo VII");
+      const rowKeys = isTableRanking
+        ? [
+            "candidato_nome[]",
+            "candidato_rg[]",
+            "aulas_fatec[]",
+            "contrato[]",
+            "pontos[]",
+          ]
+        : ["disciplina[]", "carga[]", "turno[]", "curso[]", "fatec[]"];
+      const rowCount = Array.isArray(data[rowKeys[0]])
+        ? data[rowKeys[0]].length
+        : 0;
+
+      if (rowCount > 0) {
+        tableRows.innerHTML = "";
+        for (let i = 0; i < rowCount; i += 1) {
+          if (isTableRanking) {
+            addRow({
+              nome: data["candidato_nome[]"]?.[i] || "",
+              rg: data["candidato_rg[]"]?.[i] || "",
+              aulas: data["aulas_fatec[]"]?.[i] || "",
+              contrato: data["contrato[]"]?.[i] || "",
+              pontos: data["pontos[]"]?.[i] || "0",
+            });
+          } else {
+            addRow({
+              disciplina: data["disciplina[]"]?.[i] || "",
+              carga: data["carga[]"]?.[i] || "",
+              turno: data["turno[]"]?.[i] || "",
+              curso: data["curso[]"]?.[i] || "",
+              fatec: data["fatec[]"]?.[i] || "",
+            });
+          }
+        }
+      }
+    }
+
+    if (document.title.includes("Anexo III") && window.addIndeferimentoRow) {
+      const indeferimentoRows = document.getElementById("indeferimentoRows");
+      if (indeferimentoRows) {
+        indeferimentoRows.innerHTML = "";
+        const exams = Array.isArray(data["indf_exame[]"])
+          ? data["indf_exame[]"]
+          : [];
+        const points = Array.isArray(data["indf_pontuacao[]"])
+          ? data["indf_pontuacao[]"]
+          : [];
+        const validities = Array.isArray(data["indf_validade[]"])
+          ? data["indf_validade[]"]
+          : [];
+        const rows = Math.max(exams.length, points.length, validities.length);
+        for (let i = 0; i < rows; i += 1) {
+          window.addIndeferimentoRow({
+            exame: exams[i] || "",
+            pontuacao: points[i] || "",
+            validade: validities[i] || "5 anos",
+          });
+        }
+      }
+    }
+
+    return true;
+  }
+
+  function clearValidationErrors(form) {
+    form.querySelectorAll(".error-message").forEach((error) => error.remove());
+    form
+      .querySelectorAll(".input-error")
+      .forEach((input) => input.classList.remove("input-error"));
+  }
+
+  function showValidationError(input, message) {
+    input.classList.add("input-error");
+    const parent = input.parentElement || input.closest("td") || input;
+    const existing = parent.querySelector(".error-message");
+    if (existing) {
+      existing.textContent = message;
+      return;
+    }
+
+    const span = document.createElement("span");
+    span.className = "error error-message";
+    span.textContent = message;
+    parent.appendChild(span);
+  }
+
+  function validateNumericFields(form) {
+    const numericFields = Array.from(
+      form.querySelectorAll("input[type=number], input[data-numeric]"),
+    );
+
+    for (const input of numericFields) {
+      const value = input.value.toString().trim();
+      if (!value) continue;
+
+      const isBadNumber =
+        input.type === "number"
+          ? input.validity.badInput || Number.isNaN(Number(value))
+          : Number.isNaN(Number(value));
+
+      if (isBadNumber) {
+        showValidationError(input, "Apenas números são permitidos");
+        return { isValid: false, message: "Campo numérico inválido" };
+      }
+    }
+
+    return { isValid: true, message: "" };
+  }
+
+  function validateRequiredFields(form) {
+    clearValidationErrors(form);
+    const requiredFields = Array.from(form.querySelectorAll("[data-required]"));
+    const validatedNames = new Set();
+
+    for (const field of requiredFields) {
+      const name = field.name || field.id || field.type;
+      if (validatedNames.has(name)) continue;
+      validatedNames.add(name);
+
+      if (field.type === "checkbox") {
+        const checkboxes = form.querySelectorAll(`input[name="${field.name}"]`);
+        if (!Array.from(checkboxes).some((checkbox) => checkbox.checked)) {
+          return { isValid: false, message: `Campo "${name}" é obrigatório` };
+        }
+        continue;
+      }
+
+      if (field.type === "radio") {
+        const radios = form.querySelectorAll(
+          `input[name="${field.name}"]:checked`,
+        );
+        if (radios.length === 0) {
+          return { isValid: false, message: `Campo "${name}" é obrigatório` };
+        }
+        continue;
+      }
+
+      if (field.tagName === "SELECT") {
+        if (!field.value) {
+          return { isValid: false, message: `Campo "${name}" é obrigatório` };
+        }
+        continue;
+      }
+
+      if (!field.value || !field.value.toString().trim()) {
+        return { isValid: false, message: `Campo "${name}" é obrigatório` };
+      }
+    }
+
+    return { isValid: true, message: "Formulário válido" };
+  }
+
   // Eventos de Botões
   if (btnAddRow) btnAddRow.addEventListener("click", () => addRow());
   if (btnAddIndeferido)
@@ -110,7 +291,7 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // Determinar qual função de validação usar baseada no título da página
+    // Determinar qual função de validação usar baseada no título da páginadars120308@gmail.com
     let validationResult = { isValid: true, message: "Formulário válido" };
 
     if (document.title.includes("Anexo I")) {
@@ -146,7 +327,17 @@ document.addEventListener("DOMContentLoaded", () => {
         ? window.validateAnexoX()
         : validationResult;
     }
-
+    if (validationResult.isValid) {
+      const genericResult = validateRequiredFields(form);
+      if (!genericResult.isValid) {
+        validationResult = genericResult;
+      } else {
+        const numericResult = validateNumericFields(form);
+        if (!numericResult.isValid) {
+          return;
+        }
+      }
+    }
     if (!validationResult.isValid) {
       alert(`Erro na validação: ${validationResult.message}`);
       return;
@@ -181,97 +372,13 @@ document.addEventListener("DOMContentLoaded", () => {
     popup.querySelector(".view-btn").onclick = () =>
       alert("Função visualizar pode ser conectada aqui");
   }
-  function loadSavedData() {
-    const savedData = localStorage.getItem(`pdforms-${document.title}`);
-
-    if (!savedData) return;
-    const data = JSON.parse(savedData);
-
-    // Preencher inputs normais
-    Object.keys(data).forEach((key) => {
-      // Campos de array (tabelas)
-      if (key.endsWith("[]")) return;
-      const field = form.querySelector(`[name="${key}"]`);
-      if (!field) return;
-
-      if (field.type === "checkbox") {
-        field.checked = data[key];
-      } else {
-        field.value = data[key];
-      }
-    });
-
-    // Restaurar tabela dinâmica
-    if (data["disciplina[]"]) {
-      tableRows.innerHTML = "";
-
-      data["disciplina[]"].forEach((_, i) => {
-        addRow({
-          disciplina: data["disciplina[]"]?.[i] || "",
-          carga: data["carga[]"]?.[i] || "",
-          turno: data["turno[]"]?.[i] || "",
-          curso: data["curso[]"]?.[i] || "",
-          fatec: data["fatec[]"]?.[i] || "",
-        });
-      });
-    }
-
-    // Restaurar ranking (Anexo V / VII)
-    if (data["candidato_nome[]"]) {
-      tableRows.innerHTML = "";
-      data["candidato_nome[]"].forEach((_, i) => {
-        addRow({
-          nome: data["candidato_nome[]"]?.[i] || "",
-          rg: data["candidato_rg[]"]?.[i] || "",
-          aulas: data["aulas_fatec[]"]?.[i] || false,
-          contrato: data["contrato[]"]?.[i] || "",
-          pontos: data["pontos[]"]?.[i] || "0",
-        });
-      });
-    }
-
-    // Restaurar indeferidos
-    if (data["indeferido_rg[]"] && indeferidosList) {
-      indeferidosList.innerHTML = "";
-
-      data["indeferido_rg[]"].forEach((rg) => {
-        addIndeferido(rg);
-      });
-    }
-
-    updateTotal();
-  }
 
   // Inicialização
-  loadSavedData();
-  if (tableRows && tableRows.children.length === 0) addRow();
-  if (indeferidosList && indeferidosList.children.length === 0) addIndeferido();
-  
-  // Anexo III: Tabela de Indeferimento
-  const indeferimentoRows = document.getElementById("indeferimentoRows");
-  const btnAddIndeferimento = document.getElementById("btnAddIndeferimento");
-
-  function addIndeferimentoRow(data = {}) {
-    if (!indeferimentoRows) return;
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td><input type="text" name="indf_exame[]" placeholder="Exame" value="${data.exame || ""}"></td>
-      <td><input type="text" name="indf_pontuacao[]" placeholder="Pontuação mínima" value="${data.pontuacao || ""}"></td>
-      <td><input type="text" name="indf_validade[]" placeholder="Validade" value="${data.validade || "5 anos"}"></td>
-      <td><button type="button" class="row-remove">×</button></td>
-    `;
-    tr.querySelector(".row-remove").addEventListener("click", () =>
-      tr.remove(),
-    );
-    indeferimentoRows.appendChild(tr);
-  }
-
-  if (btnAddIndeferimento) {
-    btnAddIndeferimento.addEventListener("click", () => addIndeferimentoRow());
-    // Inicializa com uma linha se estiver vazia
-    if (indeferimentoRows && indeferimentoRows.children.length === 0) {
-      addIndeferimentoRow({ validade: "5 anos" });
-    }
+  const hasLoadedSavedData = loadSavedData();
+  if (!hasLoadedSavedData) {
+    if (tableRows && tableRows.children.length === 0) addRow();
+    if (indeferidosList && indeferidosList.children.length === 0)
+      addIndeferido();
   }
 
   // Botão Limpar Formulário

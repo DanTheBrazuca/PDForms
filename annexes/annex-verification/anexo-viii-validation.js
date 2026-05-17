@@ -8,7 +8,7 @@ function validateAnexoVIII() {
 
   const requiredFields = [
     { name: "faculdade", label: "Faculdade" },
-    { name: "data_final", label: "Data Final" },
+    { name: "data", label: "Data" },
   ];
 
   // Verificar campos obrigatórios

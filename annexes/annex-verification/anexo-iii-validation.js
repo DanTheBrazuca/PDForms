@@ -185,3 +185,33 @@ function clearAnexoIIIForm() {
 // Exportar funções para uso global
 window.validateAnexoIII = validateAnexoIII;
 window.clearAnexoIIIForm = clearAnexoIIIForm;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const indeferimentoRows = document.getElementById("indeferimentoRows");
+  const btnAddIndeferimento = document.getElementById("btnAddIndeferimento");
+
+  function addIndeferimentoRow(data = {}) {
+    if (!indeferimentoRows) return;
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td><input type="text" name="indf_exame[]" placeholder="Exame" value="${data.exame || ""}"></td>
+      <td><input type="text" name="indf_pontuacao[]" placeholder="Pontuação mínima" value="${data.pontuacao || ""}"></td>
+      <td><input type="text" name="indf_validade[]" placeholder="Validade" value="${data.validade || "5 anos"}"></td>
+      <td><button type="button" class="row-remove">×</button></td>
+    `;
+    tr.querySelector(".row-remove").addEventListener("click", () =>
+      tr.remove(),
+    );
+    indeferimentoRows.appendChild(tr);
+  }
+
+  window.addIndeferimentoRow = addIndeferimentoRow;
+
+  if (btnAddIndeferimento) {
+    btnAddIndeferimento.addEventListener("click", () => addIndeferimentoRow());
+  }
+
+  if (indeferimentoRows && indeferimentoRows.children.length === 0) {
+    addIndeferimentoRow({ validade: "5 anos" });
+  }
+});

@@ -211,6 +211,16 @@ select {
   font-size: 0.85rem;
 }
 
+.input-error {
+  border-color: #d10000 !important;
+  box-shadow: 0 0 0 2px rgba(209, 0, 0, 0.18);
+}
+
+.error-message {
+  display: block;
+  margin-top: 4px;
+}
+
 .grid {
   display: grid;
   gap: 14px;

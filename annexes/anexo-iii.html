@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="anexo.css" />
     <script src="anexo.js" defer></script>
     <script src="annex-verification/anexo-iii-validation.js" defer></script>
-    <script src="anexo.js" defer></script>
   </head>
   <body>
     <header id="header">
@@ -55,6 +54,7 @@
                 name="faculdade"
                 class="input-grow"
                 placeholder="Nome da faculdade"
+                data-required
               />
             </div>
 
@@ -66,15 +66,17 @@
                 name="edital_num"
                 class="input-xs"
                 placeholder="Nº"
+                data-required
               />
               <input
                 type="text"
                 name="edital_ano"
                 class="input-sm"
                 placeholder="ano"
+                data-required
               />
               <label class="inline-label">Tempo:</label>
-              <select name="edital_tempo" class="input-md">
+              <select name="edital_tempo" class="input-md" data-required>
                 <option value="" disabled selected>selecionar</option>
                 <option value="DETERMINADO">Determinado</option>
                 <option value="INDETERMINADO">Indeterminado</option>
@@ -84,7 +86,7 @@
             <!-- Data de Início -->
             <div class="field" style="margin-top: 14px; max-width: 340px">
               <label>Data de Início:</label>
-              <input type="date" name="data_inicio" />
+              <input type="date" name="data_inicio" data-required />
             </div>
 
             <!-- Área -->
@@ -101,6 +103,7 @@
                 name="versao"
                 class="input-grow"
                 placeholder="Versão"
+                data-required
               />
               <span class="versao-de">de</span>
               <input
@@ -109,6 +112,7 @@
                 class="input-xs"
                 placeholder="0000"
                 maxlength="4"
+                data-required
               />
             </div>
 
@@ -118,7 +122,12 @@
             </p>
             <div class="options-group">
               <label class="option-item">
-                <input type="radio" name="graduacao" value="Tecnológica" />
+                <input
+                  type="radio"
+                  name="graduacao"
+                  value="Tecnológica"
+                  data-required
+                />
                 Tecnológica
               </label>
               <label class="option-item">
@@ -139,6 +148,7 @@
                 name="curso"
                 class="input-grow"
                 placeholder="Curso"
+                data-required
               />
               <label class="inline-label">Turno:</label>
               <input
@@ -146,6 +156,7 @@
                 name="turno"
                 class="input-md"
                 placeholder="Turno"
+                data-required
               />
             </div>
 
@@ -155,7 +166,7 @@
             </p>
             <div class="options-group">
               <label class="option-item">
-                <input type="radio" name="ams" value="sim" /> sim
+                <input type="radio" name="ams" value="sim" data-required /> sim
               </label>
               <label class="option-item">
                 <input type="radio" name="ams" value="não" /> não
@@ -168,7 +179,13 @@
             </p>
             <div class="options-group">
               <label class="option-item">
-                <input type="radio" name="natureza" value="Básica" /> Básica
+                <input
+                  type="radio"
+                  name="natureza"
+                  value="Básica"
+                  data-required
+                />
+                Básica
               </label>
               <label class="option-item">
                 <input
@@ -198,6 +215,7 @@
                   type="checkbox"
                   name="virtude[]"
                   value="afastamento_deliberacao"
+                  data-required
                 />
                 Autorização do afastamento nos termos da Deliberação Ceeteps n.
                 4/1997 ou Deliberação Ceeteps n. 5/1997
@@ -288,6 +306,7 @@
                   type="radio"
                   name="sendo"
                   value="com_pagamento_acima_200h"
+                  data-required
                 />
                 com possibilidade de atribuição excepcional, com pagamento acima
                 das 200h mensais
@@ -307,7 +326,12 @@
             <p class="section-heading" style="margin-top: 18px">Bem como:</p>
             <div class="options-group">
               <label class="option-item">
-                <input type="radio" name="bem_como" value="com_ampliacao" />
+                <input
+                  type="radio"
+                  name="bem_como"
+                  value="com_ampliacao"
+                  data-required
+                />
                 com possibilidade de ampliação de carga horária em mais de duas
                 disciplinas no mesmo semestre do mesmo curso na mesma Fatec
               </label>
@@ -323,12 +347,22 @@
 
             <div class="field" style="margin-top: 10px">
               <label>Nome:</label>
-              <input type="text" name="disciplina_nome" placeholder="Nome" />
+              <input
+                type="text"
+                name="disciplina_nome"
+                placeholder="Nome"
+                data-required
+              />
             </div>
 
             <div class="field" style="margin-top: 10px">
               <label>Área(s):</label>
-              <input type="text" name="disciplina_area" placeholder="Área" />
+              <input
+                type="text"
+                name="disciplina_area"
+                placeholder="Área"
+                data-required
+              />
             </div>
 
             <div class="field" style="margin-top: 10px">
@@ -337,6 +371,7 @@
                 type="text"
                 name="disciplina_carga"
                 placeholder="Carga-horária"
+                data-required
               />
             </div>
 
@@ -345,7 +380,12 @@
               <label>Dia(s) da(s) aula(s):</label>
               <div class="dias-grid">
                 <label
-                  ><input type="checkbox" name="dias[]" value="Segunda-feira" />
+                  ><input
+                    type="checkbox"
+                    name="dias[]"
+                    value="Segunda-feira"
+                    data-required
+                  />
                   Segunda-feira</label
                 >
                 <label
@@ -375,9 +415,14 @@
             <div class="field" style="margin-top: 10px">
               <label>Horário das aulas:</label>
               <div class="horario-row">
-                <input type="time" name="horario_inicio" value="00:00" />
+                <input
+                  type="time"
+                  name="horario_inicio"
+                  value=""
+                  data-required
+                />
                 <span>até</span>
-                <input type="time" name="horario_fim" value="00:00" />
+                <input type="time" name="horario_fim" value="" data-required />
               </div>
             </div>
 
@@ -421,7 +466,11 @@
             <!-- Objetivo -->
             <div class="field" style="margin-top: 10px">
               <label>Objetivo:</label>
-              <textarea name="objetivo" placeholder="Objetivo"></textarea>
+              <textarea
+                name="objetivo"
+                placeholder="Objetivo"
+                data-required
+              ></textarea>
             </div>
 
             <!-- Versão ementa -->
@@ -433,13 +482,18 @@
                 class="input-xs"
                 placeholder="0000"
                 maxlength="4"
+                data-required
               />
             </div>
 
             <!-- Ementa -->
             <div class="field" style="margin-top: 10px">
               <label>Ementa:</label>
-              <textarea name="ementa" placeholder="Ementa"></textarea>
+              <textarea
+                name="ementa"
+                placeholder="Ementa"
+                data-required
+              ></textarea>
             </div>
 
             <!-- 2 - Indeferimento -->
@@ -475,9 +529,9 @@
               <span class="dr-label"></span>
               <div class="dr-inner">
                 <span>Início:</span>
-                <input type="date" name="inscricoes_inicio" />
+                <input type="date" name="inscricoes_inicio" data-required />
                 <span>Fim:</span>
-                <input type="date" name="inscricoes_fim" />
+                <input type="date" name="inscricoes_fim" data-required />
               </div>
             </div>
 
@@ -488,9 +542,9 @@
               <span class="dr-label"></span>
               <div class="dr-inner">
                 <span>Início:</span>
-                <input type="date" name="deferimento_inicio" />
+                <input type="date" name="deferimento_inicio" data-required />
                 <span>Fim:</span>
-                <input type="date" name="deferimento_fim" />
+                <input type="date" name="deferimento_fim" data-required />
               </div>
             </div>
 
@@ -501,9 +555,9 @@
               <span class="dr-label"></span>
               <div class="dr-inner">
                 <span>Início:</span>
-                <input type="date" name="recursos_inicio" />
+                <input type="date" name="recursos_inicio" data-required />
                 <span>Fim:</span>
-                <input type="date" name="recursos_fim" />
+                <input type="date" name="recursos_fim" data-required />
               </div>
             </div>
 
@@ -514,16 +568,16 @@
               <span class="dr-label"></span>
               <div class="dr-inner">
                 <span>Início:</span>
-                <input type="date" name="analise_inicio" />
+                <input type="date" name="analise_inicio" data-required />
                 <span>Fim:</span>
-                <input type="date" name="analise_fim" />
+                <input type="date" name="analise_fim" data-required />
               </div>
             </div>
 
             <!-- Data final -->
             <div class="date-footer-row" style="margin-top: 18px">
               <span class="date-city">São Paulo</span>
-              <input type="date" name="data_final" />
+              <input type="date" name="data_final" data-required />
             </div>
 
             <!-- Salvar -->
