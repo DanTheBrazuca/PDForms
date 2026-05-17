@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #000000;
+        }
+        .content {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        
+        .instruction-box {
+            border: 1px dashed #888888;
+            background-color: #fcfcfc;
+            padding: 12px 15px;
+            font-size: 10pt;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .text-center {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .text-justify {
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        
+        input[type="text"], input[type="number"] {
+            border: none;
+            border-bottom: 1px solid #000000;
+            background: transparent;
+            font-family: Arial, sans-serif;
+            font-size: 11pt;
+            padding: 0 5px;
+            outline: none;
+        }
+
+        .checkbox-group {
+            margin: 20px 0;
+        }
+        .checkbox-line {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .checkbox-line input[type="checkbox"] {
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .justificativa-container {
+            margin: 25px 0;
+        }
+        .justificativa-sub {
+            color: #8b0000;
+            font-style: italic;
+            font-size: 10pt;
+            margin-bottom: 10px;
+        }
+        
+        /* Campo editável que simula as linhas pautadas do print */
+        .justificativa-textarea {
+            width: 100%;
+            height: 150px;
+            border: none;
+            background-image: linear-gradient(transparent 29px, #000000 30px);
+            background-size: 100% 30px;
+            line-height: 30px;
+            font-family: Arial, sans-serif;
+            font-size: 11pt;
+            resize: none;
+            outline: none;
+            padding: 0 5px;
+            overflow: hidden;
+        }
+
+        .data-container {
+            margin: 40px 0;
+        }
+
+        .assinaturas-container {
+            margin-top: 50px;
+        }
+        .assinatura-presidente {
+            width: 60%;
+            margin: 0 auto 40px auto;
+            text-align: center;
+        }
+        .assinatura-linha {
+            border-top: 1px solid #000000;
+            margin-top: 40px;
+            margin-bottom: 5px;
+        }
+        .assinatura-membros {
+            display: flex;
+            justify-content: space-between;
+        }
+        .membro-box {
+            width: 45%;
+        }
+    </style>
+</head>
+<body>    
+<div class="content">
+    
+    <div class="instruction-box">
+        Cada um dos membros da Comissão Avaliadora deverá encaminhar ao Chefe de Serviço Administrativo e Financeiro da Fatec um e-mail nos termos a seguir expostos, e este Chefe de Serviço Administrativo e Financeiro, após o recebimento dos três e-mails (um de cada membro e com o mesmo conteúdo), divulgará por e-mail ao candidato o resultado.
+    </div>
+
+    <form id="form">
+        
+        <div class="text-center">
+            <label for="campus"><b>FACULDADE DE TECNOLOGIA DE</b> </label>
+            <input type="text" id="campus" name="campus" style="width: 250px;" placeholder="__________________"/>
+        </div>
+        
+        <div class="text-justify">
+            <b>ANÁLISE E VALIDAÇÃO DA TABELA DE PONTUAÇÃO DOCENTE E DOCUMENTAÇÃO COMPROBATÓRIA APRESENTADA PELO CANDIDATO PARA O 
+            EDITAL Nº </b><input type="number" id="numEdital" name="numEdital" style="width: 80px;" placeholder="___________"/>
+            <b>DE OFERECIMENTO DE AULAS, POR TEMPO (selecionar DETERMINADO/INDETERMINADO). PARA A 
+            FACULDADE DE TECNOLOGIA DE </b><input type="text" id="campus" name="campus" style="width: 200px;" placeholder="__________________"/>
+            <b>DO CENTRO ESTADUAL DE EDUCAÇÃO TECNOLÓGICA "PAULA SOUZA"</b>
+        </div>
+         
+        <div class="text-justify">
+            <label for="candidato"><b>CANDIDATO:</b> </label>
+            <input type="text" id="candidato" name="candidato" style="width: 550px;" placeholder="__________________"/>
+        </div>
+
+        <div class="text-justify">
+            A Comissão Avaliadora responsável pelo processo de alteração de carga horária de docente do edital nº 
+            <input type="number" id="numEdital" name="numEdital" style="width: 80px;" placeholder="___________"/> 
+            expedido pela Faculdade de Tecnologia de <input type="text" id="campus" name="campus" style="width: 200px;" placeholder="__________________"/> 
+            no uso de suas atribuições, faz saber ao interessado sobre a conformidade/não conformidade da tabela de pontuação docente e documentação nos seguintes termos:
+        </div>
+        
+        <div class="checkbox-group">
+            <div class="checkbox-line">
+                <input type="checkbox" id="conformidade" name="conformidade"/> ( ) Conformidade;
+            </div>
+            <div class="checkbox-line">
+                <input type="checkbox" id="naoConformidade" name="naoConformidade"/> ( ) Não conformidade (Justificar);
+            </div>
+        </div>
+
+        <div class="justificativa-container">
+            <div><b>Justificativa</b> (somente no caso de não conformidade):</div>
+            <div class="justificativa-sub">(Relacionar o número de comprovante e a justificativa por não ter sido aceito):</div>
+            <textarea class="justificativa-textarea" id="justificativa" name="justificativa" placeholder="Digite aqui a justificativa..."></textarea>
+        </div>
+    
+        <div class="data-container">
+            <input type="text" id="cidade" name="cidade" style="width: 180px;" placeholder="__________________"/>, 
+            <input type="number" id="dia" name="dia" placeholder="__" style="width: 40px; text-align: center;"> de 
+            <input type="text" id="mes" name="mes" placeholder="__________" style="width: 100px; text-align: center;"/> de 20
+            <input type="number" id="ano" name="ano" placeholder="__" style="width: 40px; text-align: center;"/>.
+        </div>
+
+        <div class="assinaturas-container">
+            <div class="assinatura-presidente">
+                <div class="assinatura-line"></div>
+                Prof(a). <input type="text" id="nomeDocente" name="nomeDocente" style="width: 250px; text-align: center;" placeholder="__"/><br>
+                <b>Presidente</b><br>
+                RG. <input type="number" id="rgocente" name="rgDocente" style="width: 150px; text-align: center;" placeholder="__"/>
+            </div>
+
+            <div class="assinatura-membros">
+                <div class="membro-box">
+                    <div class="assinatura-line"></div>
+                    Prof(a). <input type="text" id="nomeDocente" name="nomeDocente" style="width: 200px;" placeholder="__"/><br>
+                    RG. <input type="number" id="rgocente" name="rgDocente" style="width: 120px;" placeholder="__"/>;
+                </div>
+                
+                <div class="membro-box">
+                    <div class="assinatura-line"></div>
+                    Técnico administrativo <input type="text" id="nomeTecAdmin" name="nomeTecAdmin" style="width: 180px;" placeholder="__"/><br>
+                    RG <input type="number" id="rgTecAdmin" name="rgTecAdmin" style="width: 120px;" placeholder="__"/>
+                </div>
+            </div>
+        </div>
+
+      
+    
+    </form>
+</div>
+<script src="script.js" defer></script>
+</body>
+</html>
