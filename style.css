@@ -52,7 +52,7 @@ hr {
 #img_github {
   height: clamp(60px, 1vw, 120px);
   margin: 5px 0;
-  
+
   border: 2px solid #000;
   border-radius: 50%;
 }
@@ -214,4 +214,7 @@ hr {
   align-items: center;
   padding: 1rem;
   background-color: black;
+}
+a {
+  text-decoration: none;
 }
