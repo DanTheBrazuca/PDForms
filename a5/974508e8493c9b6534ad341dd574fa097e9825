@@ -1,0 +1,39 @@
+annexes/annex-verification/anexo-ix-validation.js
+  s_d2bb417df2e437::t_571d886718f8e5 11
+annexes/anexo.js
+  s_d2bb417df2e437::t_2f35074bc703fd 51,197-241,243,334-336,338
+  s_d2bb417df2e437::t_d03db53a0c89e8 337
+  s_d2bb417df2e437::t_8f898da7971184 377-381
+  s_d2bb417df2e437::t_571d886718f8e5 242,244-261,263-284,330-333,339-340
+  s_d2bb417df2e437::t_dcb31f3b7f6bdf 104-140,142-196,294
+annexes/anexo.css
+  s_d2bb417df2e437::t_0f6fe5567c521d 214-223
+annexes/annex-verification/anexo-viii-validation.js
+  s_d2bb417df2e437::t_571d886718f8e5 11
+annexes/anexo-iii.html
+  s_d2bb417df2e437::t_d83baafb9f098e 57,69,76,79,89,106,115,125-130,151,159,169,182-188,309,329-334,350-355,360-365,374,418-423,425,469-473,485,492-496,532,534,545,547,558,560,571,573,580
+  s_d2bb417df2e437::t_0e71dc82af0820 383-388
+  s_d2bb417df2e437::t_fe6da89cd94323 218
+annexes/annex-verification/anexo-ii-validation.js
+  s_d2bb417df2e437::t_571d886718f8e5 11
+annexes/annex-verification/anexo-vii-validation.js
+  s_d2bb417df2e437::t_571d886718f8e5 11
+annexes/annex-verification/anexo-iii-validation.js
+  s_d2bb417df2e437::t_04c1af6247e7f7 188-202,204-217
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "a5974508e8493c9b6534ad341dd574fa097e9825",
+  "prompts": {},
+  "sessions": {
+    "s_d2bb417df2e437": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "8a34b396-b1cc-4989-8eee-c4d1feb4a585",
+        "model": "gpt-5-mini"
+      },
+      "human_author": "DanTheBrazuca <dars120308@gmail.com>"
+    }
+  }
+}
