@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!form) return;
 
   const tableRows = document.getElementById("tableRows");
+  const miniTableRows = document.getElementById("miniTableRows");
   const btnAddRow = document.getElementById("btnAddRow");
+  const btnAddMiniRow = document.getElementById("btnAddMiniRow");
   const indeferidosList = document.getElementById("indeferidosList");
   const btnAddIndeferido = document.getElementById("btnAddIndeferido");
 
@@ -69,6 +71,25 @@ document.addEventListener("DOMContentLoaded", () => {
     tableRows.appendChild(tr);
     updateTotal();
   }
+
+  //tabela de indeferimento do anexo VII
+  function addMiniRow(data = {}) {
+  if (!miniTableRows) return;
+
+  const tr = document.createElement("tr");
+
+  tr.innerHTML = `
+    <td><input type="text" name="rg_candidato_indeferimento[]" value="${data.rg_indeferimento || ""}"></td>
+    <td><textarea name="justificativa_indeferimento[]">${data.justificativa_indeferimento || ""}</textarea></td>
+    <td><button type="button" class="row-remove">×</button></td>
+  `;
+
+  tr.querySelector(".row-remove").addEventListener("click", () => {
+    tr.remove();
+  });
+
+  miniTableRows.appendChild(tr);
+}
 
   function refreshRankings() {
     Array.from(tableRows.children).forEach((tr, i) => {
@@ -166,6 +187,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     }
+
+  if (miniTableRows) {
+  const rgList = Array.isArray(data["rg_candidato_indeferimento[]"])
+    ? data["rg_candidato_indeferimento[]"]
+    : [];
+
+  const justificativas = Array.isArray(data["justificativa_indeferimento[]"])
+    ? data["justificativa_indeferimento[]"]
+    : [];
+
+  const rowCount = Math.max(rgList.length, justificativas.length);
+
+  if (rowCount > 0) {
+    miniTableRows.innerHTML = "";
+
+    for (let i = 0; i < rowCount; i += 1) {
+      addMiniRow({
+        rg_indeferimento: rgList[i] || "",
+        justificativa_indeferimento: justificativas[i] || "",
+      });
+    }
+  }
+}
 
     if (document.title.includes("Anexo III") && window.addIndeferimentoRow) {
       const indeferimentoRows = document.getElementById("indeferimentoRows");
@@ -284,6 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Eventos de Botões
   if (btnAddRow) btnAddRow.addEventListener("click", () => addRow());
+  if (btnAddMiniRow) btnAddMiniRow.addEventListener("click", () => addMiniRow());
   if (btnAddIndeferido)
     btnAddIndeferido.addEventListener("click", () => addIndeferido());
 
