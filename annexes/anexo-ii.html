@@ -49,7 +49,7 @@
           <form id="annexForm" novalidate>
             <!-- Faculdade -->
             <div class="inline-row">
-              <label for="faculdade">FACULDADE DE TECNOLOGIA</label>
+              <label for="faculdade">FACULDADE DE TECNOLOGIA DE</label>
               <input
                 type="text"
                 name="faculdade"
@@ -67,17 +67,42 @@
                 name="portaria_num"
                 class="input-xs"
                 placeholder="Nº"
+                data-required
               />
               <input
                 type="text"
                 name="portaria_ano"
                 class="input-sm"
                 placeholder="ano"
+                data-required
               />
               <label for="portaria_data" class="inline-label">de</label>
-              <input type="date" name="portaria_data" class="input-md" />
+              <input type="date" name="portaria_data" class="input-md" data-required/>
             </div>
 
+            <!--Coordenador-->
+            <p class="section-heading" style="margin-top: 18px">
+              Gênero do coordenador:
+            </p>
+            <div class="options-group">
+              <label class="option-item">
+                <input
+                  type="radio"
+                  name="coordenador_genero"
+                  value="m"
+
+                />
+                Masculino
+              </label>
+              <label class="option-item">
+                <input
+                  type="radio"
+                  name="coordenador_genero"
+                  value="f"
+                />
+                Feminino
+              </label>
+              </div>
             <!-- Artigo 1º -->
             <p class="section-heading" style="margin-top: 20px">Artigo 1º:</p>
             <div class="inline-row">
@@ -94,6 +119,7 @@
                 name="edital_ano"
                 class="input-sm"
                 placeholder="ano"
+                data-required
               />
               <span class="inline-label">Curso:</span>
               <input
@@ -124,7 +150,7 @@
                   type="text"
                   name="membro1_rg"
                   class="rg-input"
-                  placeholder="Registro Geral"
+                  data-required
                 />
               </div>
             </div>
@@ -145,7 +171,7 @@
                   type="text"
                   name="membro2_rg"
                   class="rg-input"
-                  placeholder="Registro Geral"
+                  data-required
                 />
               </div>
             </div>
@@ -166,7 +192,7 @@
                   type="text"
                   name="membro3_rg"
                   class="rg-input"
-                  placeholder="Registro Geral"
+                  data-required
                 />
               </div>
             </div>
@@ -179,7 +205,7 @@
               <input
                 type="text"
                 name="suplente_docente"
-                placeholder="Docente"
+                data-required
               />
             </div>
 
@@ -188,7 +214,7 @@
               <input
                 type="text"
                 name="suplente_tecnico"
-                placeholder="Docente"
+                data-required
               />
             </div>
 
@@ -196,6 +222,15 @@
             <div class="date-footer-row">
               <span class="date-city">São Paulo |</span>
               <input type="date" name="data" data-required />
+            </div>
+
+            <div class="suplente-row">
+              <span class="suplente-label">Coordenador:</span>
+              <input
+                type="text"
+                name="coordenador_nome"
+                data-required
+              />
             </div>
 
             <div class="submit-row">
