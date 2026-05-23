@@ -93,44 +93,37 @@
               />
             </div>
 
-            <div class="field">
-              <div class="section-title">
-                <p>Conformidade:</p>
-              </div>
-              <div class="">
-                <div class="">
-                  <input
-                    type="radio"
-                    id="conformidade"
-                    name="conformidade"
-                    value="Conformidade"
-                  />
-                  <label for="conformidade"> Conformidade </label>
-                </div>
-                <div class="">
-                  <input
-                    type="radio"
-                    id="inconformidade"
-                    name="inconformidade"
-                    value="Inconformidade"
-                  />
-                  <label for="conformidade"> Inconformidade </label>
-                </div>
-              </div>
+            <p class="section-heading" style="margin-top: 18px">
+              Conformidade:
+            </p>
+            <div class="options-group">
+              <label class="option-item">
+                <input
+                  type="radio"
+                  name="conformidade"
+                  value="Conformidade"
+                  data-required
+                />
+                Conformidade
+              </label>
+              <label class="option-item">
+                <input
+                  type="radio"
+                  name="inconformidade"
+                  value="Inconformidade"
+                  data-required
+                />
+                Inconformidade
+              </label>
             </div>
 
-            <div class="section-title">
-              <p>Justificar</p>
-              <span> (somente no caso de não conformidade): </span>
-            </div>
-
-            <div class="field">
+            <!-- Justificar -->
+            <div class="field" style="margin-top: 10px">
+              <label>Justificar (somente no caso de não conformidade):</label>
               <textarea
                 name="justificativa"
-                id="justificativa"
-                placeholder="Justificativa"
-              >
-              </textarea>
+                data-required
+              ></textarea>
             </div>
 
             <!-- Data final -->
