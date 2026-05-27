@@ -7,7 +7,7 @@ function validateAnexoVIII() {
   if (!form) return { isValid: false, message: "Formulário não encontrado" };
 
   const requiredFields = [
-    { name: "faculdade", label: "Faculdade" },
+    { name: "fatec_sede", label: "Fatec Sede" },
     { name: "data", label: "Data" },
   ];
 
