@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edital Completo</title>
+</head>
+<body>    
+    <div class="content">
+        <style> h4, h3{
+            text-align: center;
+        }
+        h4,h3, p, div{
+            font-family: Arial;
+            
+        }
+        .cent{
+            text-align: right;
+        }
+        </style>
+
+        <form id="form" style="max-width: 650px; margin: 0 auto; font-size: 10pt; line-height: 1.4;"> <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">Administração Central</div>
+            <div style="text-align: center; font-size: 9pt; margin-bottom: 20px;">Coordenadoria Geral de Ensino Superior de Graduação</div>
+
+            <div class="header-box" style="text-align: center; font-weight: bold; margin-bottom: 15px;">
+                FACULDADE DE TECNOLOGIA DE <input type="text" id="campus" style="width: 250px; font-weight: bold; text-align: center; border: none; border-bottom: 1px solid #000;">
+            </div>
+
+            <h4 style="font-weight: bold; margin-bottom: 15px; text-align: center;">
+                EDITAL Nº <input type="text" id="numEdital" style="width: 40px; text-align: center; border: none; border-bottom: 1px solid #000;"> / 20<input type="text" id="anoEdital" style="width: 25px; text-align: center; border: none; border-bottom: 1px solid #000;"><br>
+                POR TEMPO ( <input type="checkbox" id="tempoIndet"> ) INDETERMINADO / ( <input type="checkbox" id="tempoDet"> ) DETERMINADO
+            </h4>
+            
+            <p style="text-align: justify; font-weight: bold;">
+                DE OFERECIMENTO DE AULAS PARA A FACULDADE DE TECNOLOGIA DE <input type="text" id="campus" style="width: 150px; border: none; border-bottom: 1px solid #000;">, DO CENTRO ESTADUAL DE EDUCAÇÃO TECNOLÓGICA "PAULA SOUZA".
+            </p>
+
+            <p style="text-align: justify;">
+                <input type="text" id="coordenador" style="width: 130px; border: none; border-bottom: 1px solid #000;" placeholder="O(A) Coordenador(a)"> da Faculdade de Tecnologia de <input type="text" id="campus" style="width: 120px; border: none; border-bottom: 1px solid #000;">, com fundamento nas seguintes normativas:
+            </p>
+
+            <ul style="list-style-type: disc; margin-left: 20px; text-align: justify;">
+                <li>Deliberação CEETEPS n. 109/2026;</li>
+                <li>Deliberação CEETEPS n.108/2025 (Aplicável nos Cursos Superiores de Tecnologia do Programa Itinerário Formativo Verticalizado);</li>
+                <li>Portaria CGESG n. 09/2025;</li>
+                <li>Instrução CGESG n. 03/2026.;</li>
+                <li>Tabela de Áreas vigente;</li>
+                <li>Editais em vigor para concurso público docente; e</li>
+                <li>Legislação do Conselho Estadual de Educação;</li>
+            </ul>
+
+            <p style="text-align: justify;">
+                faz saber ao corpo docente das Fatecs que está disponível para alteração de carga horária, <b>por tempo:</b><br>
+                ( <input type="checkbox" id="tempoIndet2"> ) <b>indeterminado</b><br>
+                ( <input type="checkbox" id="tempoDet2"> ) <b>determinado</b><br>
+                a partir de <input type="text" id="dataPartir" style="width: 70px; border: none; border-bottom: 1px solid #000;">, a(s) seguinte(s) disciplina(s), da área <input type="text" id="areaDisc" style="width: 150px; border: none; border-bottom: 1px solid #000;"> (versão X.XX.X da Tabela(s) de Disciplinas, Áreas e Formações Acadêmicas – <span style="color: red; font-style: italic;">deve ser consultada a versão atual disponível na data da expedição do edital</span>), pertencente a estrutura curricular do <b>Curso Superior de Graduação:</b><br>
+                ( <input type="checkbox" id="cursoTec"> ) <b>Tecnológica</b><br>
+                ( <input type="checkbox" id="cursoBach"> ) <b>Bacharelado</b><br>
+                ( <input type="checkbox" id="cursoLic"> ) <b>Licenciatura</b><br>
+                em <input type="text" id="curso" style="width: 150px; border: none; border-bottom: 1px solid #000;"> - Turno [ <input type="text" id="turnoCurso" style="width: 60px; border: none; border-bottom: 1px solid #000;"> ] sendo que o curso:<br><br>
+                ( <input type="checkbox" id="pertenceAms"> ) Pertence ao Programa Articulação Médio-Superior – AMS<br>
+                ( <input type="checkbox" id="naoPertenceAms"> ) <b>NÃO</b> Pertence ao Programa Articulação Médio-Superior – AMS
+            </p>
+
+            <p style="text-align: justify;">
+                <b>Natureza da disciplina:</b><br>
+                ( <input type="checkbox" id="natBasica"> ) Básica<br>
+                ( <input type="checkbox" id="natProf"> ) Profissionalizante<br>
+                ( <input type="checkbox" id="natLingua"> ) Línguas estrangeiras
+            </p>
+
+            <p style="text-align: justify;">
+                <b>Em virtude de:</b><br>
+                ( <input type="checkbox" id="virtAfast"> ) Autorização do afastamento nos termos da Deliberação Ceeteps n. 4/1997 ou Deliberação Ceeteps n. 5/1997;<br>
+                ( <input type="checkbox" id="virtDesig"> ) Designação para assumir função ou cargo em confiança;<br>
+                ( <input type="checkbox" id="virtDecisao"> ) Decisão partidária para concorrência a cargo eletivo (cargos políticos);<br>
+                ( <input type="checkbox" id="virtProj1"> ) Autorização para realização de projetos de interesse da Administração Central;<br>
+                ( <input type="checkbox" id="virtProj2"> ) Autorização para realização de projetos de interesse de outros órgãos públicos;<br>
+                ( <input type="checkbox" id="virtDivisao"> ) Autorização para divisão de turma ou abertura de turma extraordinária;<br>
+                ( <input type="checkbox" id="virtRegime"> ) Autorização para desenvolvimento de Projeto em Regime de Jornada Integral;<br>
+                ( <input type="checkbox" id="virtInstrucao"> ) Autorização nos termos do Artigo 6º, §2º da Instrução CGESG n. 03/2026;<br>
+                ( <input type="checkbox" id="virtLicença"> ) Licença – especificar [ <input type="text" id="especLicenca" style="width: 120px; border: none; border-bottom: 1px solid #000;"> ]
+            </p>
+
+            <p style="text-align: justify;">
+                <b>Sendo:</b><br>
+                ( <input type="checkbox" id="sendoExcep"> ) com possibilidade de atribuição excepcional, com pagamento acima das 200h mensais;<br>
+                ( <input type="checkbox" id="sendoSemExcep"> ) sem possibilidade de atribuição excepcional, com pagamento acima das 200h mensais;
+            </p>
+
+            <p style="text-align: justify;">
+                <b>Bem como:</b><br>
+                ( <input type="checkbox" id="ampliacaoSim"> ) com possibilidade de ampliação de carga horária em mais de duas disciplinas no mesmo semestre do mesmo curso na mesma Fatec;<br>
+                ( <input type="checkbox" id="ampliacaoNao"> ) sem possibilidade de ampliação de carga horária em mais de duas disciplinas no mesmo semestre do mesmo curso na mesma Fatec.
+            </p>
+
+            <p style="text-align: justify; line-height: 1.8;">
+                <b>Disciplina:</b><br>
+                Nome: <input type="text" id="discNome" style="width: 80%; border: none; border-bottom: 1px solid #000;"><br>
+                Área(s): <input type="text" id="discArea" style="width: 80%; border: none; border-bottom: 1px solid #000;"><br>
+                Carga horária: <input type="text" id="discCh" style="width: 70%; border: none; border-bottom: 1px solid #000;"><br>
+                Dia(s) da(s) aula(s): <input type="text" id="discDias" style="width: 65%; border: none; border-bottom: 1px solid #000;"><br>
+                Horário(s) das aulas(s): <input type="text" id="discHorarios" style="width: 65%; border: none; border-bottom: 1px solid #000;"><br>
+                Formato das aulas: [ <input type="text" id="porcPres" style="width: 30px; text-align: center; border: none; border-bottom: 1px solid #000;"> ]% presencial, [ <input type="text" id="porcSinc" style="width: 30px; text-align: center; border: none; border-bottom: 1px solid #000;"> ]% remoto síncrono ou [ <input type="text" id="porcAssinc" style="width: 30px; text-align: center; border: none; border-bottom: 1px solid #000;"> ]% remoto assíncrono, conforme PPC.
+            </p>
+
+            <p style="text-align: justify;">
+                Objetivo: <input type="text" id="discObj" style="width: 80%; border: none; border-bottom: 1px solid #000;"><br>
+                <span style="color: red; font-style: italic; font-size: 9pt; margin-left: 50px;">Inserir o objetivo previsto no Projeto Pedagógico do Curso</span><br>
+                Ementa: <input type="text" id="discEmenta" style="width: 80%; border: none; border-bottom: 1px solid #000;"><br>
+                <span style="color: red; font-style: italic; font-size: 9pt; margin-left: 50px;">Inserir a ementa prevista no Projeto Pedagógico do Curso</span>
+            </p>
+
+            <p style="text-align: justify; font-weight: bold; margin-top: 25px;">1. CONDIÇÕES PARA ASSUMIR AS AULAS:</p>
+            <p style="text-align: justify; font-size: 9.5pt;">Estarão aptos para ampliação da referida disciplina, os docentes das Fatecs do Ceeteps nos termos da Deliberação Ceeteps n. 109/2026 e Instrução CGESG n. 03/2026, bem como demais legislações vigentes sobre o certame, especialmente as exigências previstas para concurso público docente:</p>
+
+            <p style="text-align: center; font-weight: bold; color: red; font-size: 9.5pt;">DISCIPLINAS DE FORMAÇÃO BÁSICA OU PROFISSIONALIZANTE</p>
+            <p style="text-align: justify; font-size: 9pt;">
+                I - Ser graduado e titulado em programa de mestrado ou doutorado reconhecido ou recomendado na forma da lei, sendo a graduação ou a titulação em uma das áreas da disciplina, conforme edital de abertura do certame, bem como possuir experiência profissional relevante de pelo menos 03 (três) anos na área da disciplina, após a obtenção de grau acadêmico (graduação) ou da titulação (mestrado ou doutorado) na área objeto do certame; ou<br>
+                II - Ser graduado em uma das áreas da disciplina, conforme edital de abertura do certame, e possuir especialização em nível de pós-graduação na mesma área da graduação, bem como experiência profissional relevante de pelo menos 05 (cinco) anos na área da disciplina, após a obtenção de grau acadêmico na área objeto do certame.
+            </p>
+
+            <p style="text-align: center; font-weight: bold; color: red; font-size: 9.5pt;">DISCIPLINAS DE LÍNGUA ESTRANGEIRA</p>
+            <p style="text-align: justify; font-size: 9pt;">
+                I - Ser graduado com habilitação específica e titulado em programa de mestrado ou doutorado reconhecido ou recomendado na forma da lei, sendo a graduação ou a titulação em uma das áreas da disciplina, conforme edital de abertura do certame, bem como possuir experiência profissional relevante de pelo menos 03 (três) anos na área da disciplina, após a obtenção de grau acadêmico (graduação) ou da titulação (mestrado ou doutorado) na área objeto do certame; ou<br>
+                II - Ser graduado com habilitação específica em uma das áreas da disciplina, conforme edital de abertura do certame, e possuir especialização em nível de pós-graduação na mesma área da graduação, bem como experiência profissional relevante de pelo menos 05 (cinco) anos na área da disciplina, após a obtenção de grau acadêmico na área objeto do certame.
+            </p>
+
+            <p style="text-align: center; font-weight: bold; color: red; font-size: 9.5pt; margin-top: 20px;">DISCIPLINAS DE LÍNGUA ESTRANGEIRA - INGLÊS</p>
+            <p style="text-align: justify; font-size: 9pt;">Além de atender aos requisitos descritos nos itens I ou II do item DISCIPLINAS DE LÍNGUA ESTRANGEIRA deste edital, o candidato deverá apresentar um certificado de exame de proficiência internacional vitalício ou com data de realização não superior a 5 anos da data de admissão, com pontuação mínima, conforme abaixo:</p>
+
+            <table style="width: 100%; border-collapse: collapse; font-size: 8.5pt; margin-top: 10px;" border="1">
+                <thead>
+                    <tr style="background-color: #f2f2f2;">
+                        <th style="padding: 4px; text-align: left;">EXAME</th>
+                        <th style="padding: 4px; text-align: center; width: 130px;">PONTUAÇÃO MÍNIMA</th>
+                        <th style="padding: 4px; text-align: center; width: 90px;">VALIDADE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td style="padding: 3px;">APTIS for Teachers</td><td style="padding: 3px; text-align: center;">160 (B2)</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">BEC Vantage</td><td style="padding: 3px; text-align: center;">160 (B2)</td><td style="padding: 3px; text-align: center;">Vitalício</td></tr>
+                    <tr><td style="padding: 3px;">BEC Higher</td><td style="padding: 3px; text-align: center;">180 (C1)</td><td style="padding: 3px; text-align: center;">Vitalício</td></tr>
+                    <tr><td style="padding: 3px;">British Council EnglishScore (Core Skills)</td><td style="padding: 3px; text-align: center;">B2</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">CAE / CE – Cambridge English C1</td><td style="padding: 3px; text-align: center;">PASS 160 (B2)</td><td style="padding: 3px; text-align: center;">Vitalício</td></tr>
+                    <tr><td style="padding: 3px;">CAL EPT Teachers</td><td style="padding: 3px; text-align: center;">B2</td><td style="padding: 3px; text-align: center;">Vitalício</td></tr>
+                    <tr><td style="padding: 3px;">CELT– P</td><td style="padding: 3px; text-align: center;">Proficient / Expert</td><td style="padding: 3px; text-align: center;">Vitalício</td></tr>
+                    <tr><td style="padding: 3px;">CELT– S</td><td style="padding: 3px; text-align: center;">Proficient / Expert</td><td style="padding: 3px; text-align: center;">Vitalício</td></tr>
+                    <tr><td style="padding: 3px;">CELTA</td><td style="padding: 3px; text-align: center;">PASS</td><td style="padding: 3px; text-align: center;">Vitalício</td></tr>
+                    <tr><td style="padding: 3px;">CPE / CE – Cambridge English C2</td><td style="padding: 3px; text-align: center;">PASS 180 (C1)</td><td style="padding: 3px; text-align: center;">Vitalício</td></tr>
+                    <tr><td style="padding: 3px;">COTE</td><td style="padding: 3px; text-align: center;">PASS</td><td style="padding: 3px; text-align: center;">Vitalício</td></tr>
+                    <tr><td style="padding: 3px;">DELTA</td><td style="padding: 3px; text-align: center;">PASS</td><td style="padding: 3px; text-align: center;">Vitalício</td></tr>
+                    <tr><td style="padding: 3px;">Duolingo English Test</td><td style="padding: 3px; text-align: center;">105 (B2)</td><td style="padding: 3px; text-align: center;">2 anos</td></tr>
+                    <tr><td style="padding: 3px;">ECCE – Examination for the Certificate of Competency in English</td><td style="padding: 3px; text-align: center;">PASS</td><td style="padding: 3px; text-align: center;">Vitalício</td></tr>
+                    <tr><td style="padding: 3px;">ECPE – Michigan: Examination for the Certificate of Proficiency in English</td><td style="padding: 3px; text-align: center;">PASS</td><td style="padding: 3px; text-align: center;">Vitalício</td></tr>
+                    <tr><td style="padding: 3px;">EF SET</td><td style="padding: 3px; text-align: center;">51 (B2)</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">FCE – First Certificate of English</td><td style="padding: 3px; text-align: center;">PASS 160 (B2)</td><td style="padding: 3px; text-align: center;">Vitalício</td></tr>
+                    <tr><td style="padding: 3px;">IELCA</td><td style="padding: 3px; text-align: center;">B2</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">IELTS</td><td style="padding: 3px; text-align: center;">5,5 (B2)</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">ITEP Academic ou Business</td><td style="padding: 3px; text-align: center;">3,5 (B2)</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">LanguageCert International Communicator, Expert ou Mastery</td><td style="padding: 3px; text-align: center;">B2</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">Linguaskill</td><td style="padding: 3px; text-align: center;">160 (B2)</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">MET – Michigan English Test</td><td style="padding: 3px; text-align: center;">53 (B2)</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">PEIC (Pearson English International Certificate)</td><td style="padding: 3px; text-align: center;">B2</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">PTE Academic ou General</td><td style="padding: 3px; text-align: center;">59 (B2)</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">Oxford Test of English</td><td style="padding: 3px; text-align: center;">60 (B2)</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">TELC English</td><td style="padding: 3px; text-align: center;">B2</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">TIE (Test of Interactive English)</td><td style="padding: 3px; text-align: center;">55 (B2)</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">TKT (Teaching Knowledge Test) – modulo 2 ou 3</td><td style="padding: 3px; text-align: center;">Band 1</td><td style="padding: 3px; text-align: center;">Vitalício</td></tr>
+                    <tr><td style="padding: 3px;">TOEIC (S&W)</td><td style="padding: 3px; text-align: center;">160 (B2)</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">TOEIC (L&R)</td><td style="padding: 3px; text-align: center;">785 (B2)</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">TOEFL Essentials</td><td style="padding: 3px; text-align: center;">6,5 (B2)</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">TOEFL ibt</td><td style="padding: 3px; text-align: center;">72 (B2)</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">TOEFL itp</td><td style="padding: 3px; text-align: center;">543 (B2)</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">TOEFL pbt</td><td style="padding: 3px; text-align: center;">543 (B2)</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">Trinity GESE, ISE, CertTESOL ou Diploma in TESOL</td><td style="padding: 3px; text-align: center;">B2</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                    <tr><td style="padding: 3px;">VERSANT English Test</td><td style="padding: 3px; text-align: center;">50</td><td style="padding: 3px; text-align: center;">5 anos</td></tr>
+                </tbody>
+            </table>
+            <p style="text-align: justify; font-size: 8.5pt; font-style: italic; margin-top: 5px;">* Caso o candidato apresente certificações que não constam na lista, deverá haver consulta à Coordenadoria Acadêmico-Pedagógica da Coordenadoria Geral de Ensino Superior de Graduação do Ceeteps.</p>
+
+            <p style="text-align: justify; font-weight: bold; margin-top: 20px;">2. MANIFESTAÇÃO DOS INTERESSADOS:</p>
+            <p style="text-align: justify; font-size: 9.5pt;">
+                2.1 – Para realizar a inscrição o docente deverá encaminhar para o e-mail <input type="text" id="emailInscr" style="width: 180px; border: none; border-bottom: 1px solid #000;" placeholder="f000editais@cps.sp.gov.br"> a seguinte documentação:<br>
+                a) Ficha de manifestação de interesse (Anexo VI da Instrução CGESG n. 03/2026);<br>
+                b) Tabela de pontuação docente (Anexo IV da Instrução CGESG n. 03/2026), preenchida eletronicamente, sendo o preenchimento de exclusiva responsabilidade do docente interessado; e<br>
+                c) Documentação comprobatória das atividades/itens elencados na tabela de pontuação docente.
+            </p>
+
+            <p style="text-align: justify; font-size: 9.5pt; line-height: 1.8;">
+                2.2 – Inscrições (3 dias úteis) - de <input type="text" id="inscDe" style="width: 60px; border: none; border-bottom: 1px solid #000;"> a <input type="text" id="inscA" style="width: 60px; border: none; border-bottom: 1px solid #000;">, até 23h59min.<br>
+                2.3 - Deferimento/indeferimento e classificação/resultado (até 5 dias úteis) - de <input type="text" id="defDe" style="width: 60px; border: none; border-bottom: 1px solid #000;"> a <input type="text" id="defA" style="width: 60px; border: none; border-bottom: 1px solid #000;">.<br>
+                2.4 - Interposição de recursos (2 dias úteis) - de <input type="text" id="recDe" style="width: 60px; border: none; border-bottom: 1px solid #000;"> a <input type="text" id="recA" style="width: 60px; border: none; border-bottom: 1px solid #000;">, até 23h59min.<br>
+                2.5 - Análise de recurso (2 dias úteis) - de <input type="text" id="analiseDe" style="width: 60px; border: none; border-bottom: 1px solid #000;"> a <input type="text" id="analiseA" style="width: 60px; border: none; border-bottom: 1px solid #000;">.
+            </p>
+
+            <p style="text-align: justify; font-weight: bold; margin-top: 20px;">3. CLASSIFICAÇÃO:</p>
+            <p style="text-align: justify; font-size: 9.5pt;">A classificação dos candidatos aptos selecionados por meio de Edital ocorrerá respeitando o § 2º do Artigo 5º e o § 2º do Artigo 6º da Deliberação Ceeteps n. 109, de 15-01-2026, conforme a pertinência.</p>
+            <p style="text-align: justify; font-size: 9.5pt;">Nos Editais que contemplam mais de uma disciplina, a alteração de carga horária deverá ocorrer individualmente por disciplina, por curso, por turno; devendo o candidato classificado e convocado para o aceite, manifestar sua(s) disciplina(s) de interesse, tendo em vista a compatibilidade de horário e carga horária; havendo a desistência do primeiro classificado ou o aceite não contemplar todas as disciplinas, o segundo classificado deverá ser convocado, assim sucessivamente.</p>
+            
+            <p style="text-align: justify; font-size: 9.5pt;">Na hipótese de empate na classificação dos candidatos, serão utilizados os seguintes critérios de desempate:<br>
+                I - Idade igual ou superior a 60 anos completos e, havendo mais que um, priorizando o de maior idade (Lei n. 10.741/2003 - Estatuto do Idoso);<br>
+                II - Concurso na disciplina;<br>
+                III - Concurso na área da disciplina;<br>
+                IV - Maior titulação na área da disciplina para disciplinas básicas ou maior tempo de experiência profissional nas especificidades da área da disciplina para disciplinas profissionalizantes;<br>
+                V - Maior tempo de contratação em Fatecs;<br>
+                VI - Menor número de aulas por semana.
+            </p>
+
+            <p style="text-align: justify; margin-top: 20px;">
+                Os casos omissos serão analisados pela comissão avaliadora e homologados pelo(a) Coordenador(a) da Fatec.
+            </p>
+
+            <div style="margin-top: 35px; text-align: right;">
+                <input type="text" id="cidadeFinal" style="width: 100px; text-align: center; border: none; border-bottom: 1px solid #000;">, <input type="number" id="diaFinal" style="width: 25px; border: none; border-bottom: 1px solid #000;"> de <input type="text" id="mesFinal" style="width: 70px; border: none; border-bottom: 1px solid #000;"> de 20<input type="number" id="anoFinal" style="width: 25px; border: none; border-bottom: 1px solid #000;">.
+            </div>
+
+            <div style="margin-top: 50px; text-align: right; padding-right: 20px;">
+                _______________________________________ Profa. <input type="text" id="coordenador" style="width: 100px; border: none;" placeholder="XXX"><br>
+                Coordenador(a) da Fatec <input type="text" id="campus" style="width: 100px; border: none; border-bottom: 1px solid #000;">
+            </div>
+
+        </form>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
