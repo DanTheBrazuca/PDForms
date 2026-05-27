@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento Fatec</title>
+</head>
+<style>
+    @page {
+        size: A4;
+        margin: 20mm;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #e0e0e0;
+    }
+    .content {
+        width: 210mm;
+        min-height: 297mm;
+        padding: 20mm;
+        box-sizing: border-box;
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        margin: 20px auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    p {
+        margin: 0 0 15px;
+        line-height: 1.4;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    th {
+        border: 1px solid black;
+        text-align: center;
+        padding: 5px;
+        background-color: lightgray;
+        font-size: 12px;
+    }
+    td {
+        border: 1px solid black;
+        text-align: center;
+        padding: 5px;
+    }
+    input {
+        border: none;
+        border-bottom: 1px solid #000;
+        outline: none;
+        background: transparent;
+        font-family: inherit;
+    }
+    .header-box {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+    .signature-section {
+        margin-top: 40px;
+    }
+    .sig-line {
+        margin-bottom: 20px;
+    }
+</style>
+<body>    
+    <div class="content">
+        <style> h4, h3{
+            text-align: center;
+        }
+        h4,h3, p, div{
+            font-family: Arial;
+            
+        }
+        .cent{
+            text-align: right;
+        }
+        </style>
+       <form id="form" style="max-width: 650px; margin: 0 auto;"> <div class="header-box" style="text-align: center; font-weight: bold; margin-bottom: 20px;">
+                FACULDADE DE TECNOLOGIA DE <input type="text" id="campus" name="campus" style="width: 180px; font-weight: bold; text-align: center; border: none; border-bottom: 1px solid #000;">
+            </div>
+
+            <h4 style="text-align: justify; font-weight: bold; line-height: 1.6;">
+                PORTARIA DA FACULDADE DE TECNOLOGIA DE 
+                <input type="text" id="campus" name="campus" style="width: 120px; font-weight: bold; text-align: center; border: none; border-bottom: 1px solid #000;"> 
+                Nº <input type="text" id="numEdital" name="numEdital" style="width: 40px; text-align: center; border: none; border-bottom: 1px solid #000;"> / 
+                <input type="text" id="ano" name="ano" style="width: 30px; text-align: center; border: none; border-bottom: 1px solid #000;"> 
+                <span style="color: red; font-style: italic; font-size: 10pt; font-weight: normal;">(seguir numeração de controle interno de portarias da Fatec)</span>, de 
+                <input type="number" id="dia" style="width: 25px; border: none; border-bottom: 1px solid #000;"> de 
+                <input type="text" id="mes" style="width: 70px; border: none; border-bottom: 1px solid #000;"> de 20<input type="number" id="ano" style="width: 25px; border: none; border-bottom: 1px solid #000;">.
+            </h4>
+
+            <p style="text-align: justify; margin-top: 20px;">
+                <input type="text" id="coordenador" name="coordenador" style="width: 140px; border: none; border-bottom: 1px solid #000;" placeholder="O(A) Coordenador(a)"> da Faculdade de Tecnologia de <input type="text" id="campus" name="campus" style="width: 120px; border: none; border-bottom: 1px solid #000;">, no uso de suas atribuições legais e regimentais, expede a seguinte Portaria:   
+            </p>
+            
+            <p style="text-align: justify;">
+                <b>Artigo 1º -</b> Fica constituída a Comissão Avaliadora que será responsável pelo processo de alteração de carga horária de docente do Edital nº <input type="text" id="numEdital" name="numEdital" style="width: 40px; text-align: center; border: none; border-bottom: 1px solid #000;">, expedido pela Fatec junto ao Curso Superior de Tecnologia em <input type="text" id="curso" name="curso" style="width: 180px; border: none; border-bottom: 1px solid #000;">.
+            </p>
+          
+            <p style="text-align: justify; line-height: 1.8;">
+                <b>Artigo 2º -</b> Comporão a presente Comissão, sem prejuízo de suas atividades e sem ônus para a Instituição:<br>
+                Membro 1: Prof(a). <input type="text" id="profPresidente" name="profPresidente" style="width: 200px; border: none; border-bottom: 1px solid #000;">, Presidente, RG <input type="text" id="rgPresidente" name="rgPresidente" style="width: 100px; border: none; border-bottom: 1px solid #000;"><br>
+                Membro 2: Prof(a). <input type="text" id="professor2" name="professor2" style="width: 200px; border: none; border-bottom: 1px solid #000;">, RG <input type="text" id="rgProfessor2" name="rgProfessor2" style="width: 100px; border: none; border-bottom: 1px solid #000;"><br>
+                Membro 3: Técnico administrativo <input type="text" id="nomeTecAdmin" name="nomeTecAdmin" style="width: 180px; border: none; border-bottom: 1px solid #000;">, RG <input type="text" id="rgTecAdmin" name="rgTecAdmin" style="width: 100px; border: none; border-bottom: 1px solid #000;"><br><br>
+                
+                Suplentes:<br>
+                Docente: <input type="text" id="docenteSuplente" name="docenteSuplente" style="width: 200px; border: none; border-bottom: 1px solid #000;"><br>
+                Técnico administrativo: <input type="text" id="tecAdminSuplente" name="tecAdminSuplente" style="width: 180px; border: none; border-bottom: 1px solid #000;">
+            </p>
+
+            <p style="text-align: justify;">
+                <b>Parágrafo Único.</b> Esta comissão ficará responsável pela análise da documentação apresentada pelos docentes inscritos para o deferimento/indeferimento das inscrições, classificação e apresentação dos resultados, além da análise de recursos interpostos, quando houver.
+            </p>
+
+            <div style="margin-top: 40px; text-align: right;">
+                <input type="text" id="cidadeFinal" style="width: 100px; text-align: center; border: none; border-bottom: 1px solid #000;">, <input type="number" id="dia" style="width: 25px; border: none; border-bottom: 1px solid #000;"> de <input type="text" id="mes" style="width: 70px; border: none; border-bottom: 1px solid #000;"> de 20<input type="number" id="ano" style="width: 25px; border: none; border-bottom: 1px solid #000;">.
+            </div>
+
+            <div style="margin-top: 60px; text-align: left;">
+                ____________________________________________________ Prof(a). <input type="text" id="nomeProfessor" name="nomeProfessor" style="width: 150px; border: none;" placeholder="XXX"><br>
+                Coordenador(a) da Fatec <input type="text" id="nomeCoordenador" name="nomeCoordenador" style="width: 120px; border: none; border-bottom: 1px solid #000;">
+            </div>
+
+        </form>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
