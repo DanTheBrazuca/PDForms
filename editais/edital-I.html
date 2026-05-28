@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento Fatec</title>
+</head>
+<style>
+    @page {
+        size: A4;
+        margin: 20mm;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #e0e0e0;
+    }
+    .content {
+        width: 210mm;
+        min-height: 297mm;
+        padding: 20mm;
+        box-sizing: border-box;
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        margin: 20px auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    p {
+        margin: 0 0 15px;
+        line-height: 1.4;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    th {
+        border: 1px solid black;
+        text-align: center;
+        padding: 5px;
+        background-color: lightgray;
+        font-size: 12px;
+    }
+    td {
+        border: 1px solid black;
+        text-align: center;
+        padding: 5px;
+    }
+    input {
+        border: none;
+        border-bottom: 1px solid #000;
+        outline: none;
+        background: transparent;
+        font-family: inherit;
+    }
+    .header-box {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+    .signature-section {
+        margin-top: 40px;
+    }
+    .sig-line {
+        margin-bottom: 20px;
+    }
+</style>
+<body>    
+    <div class="content">
+        <style> h4, h3{
+            text-align: center;
+        }
+        h4,h3, p, div{
+            font-family: Arial;
+            
+        }
+        .cent{
+            text-align: right;
+        }
+        </style>
+                
+        
+    <form id="form" style="max-width: 700px; margin: 0 auto; font-family: Arial, sans-serif; color: #000; line-height: 1.5;"> 
+    
+   <div class="header-box" style="text-align: justify; color: #4169E1; border: 1px solid #000; padding: 10px; margin-bottom: 20px; font-size: 14px; text-transform: none !important;">
+    <p style="margin: 0; text-transform: none !important;">O Chefe de Serviço Administrativo e Financeiro deverá preparar o Anexo I, relativo à alteração da carga horária do docente e colher o "de acordo" do Coordenador da Fatec. Na sequência, o Chefe de Serviço Administrativo e Financeiro deverá dar ciência ao docente interessado que, por sua vez, assinará o respectivo documento. Posteriormente, o Anexo I será encaminhado para a ciência da Congregação ou Comissão de Implantação, de modo a posteriormente ser juntado ao processo de contratação do docente interessado.</p>
+</div>
+
+    <div style="text-align: center; font-weight: bold; margin-bottom: 25px; font-size: 16px;">
+        FACULDADE DE TECNOLOGIA DE <input type="text" id="campus" name="campus" style="width: 250px; font-weight: bold; font-family: Arial; border: none; border-bottom: 1px solid #000; outline: none; text-align: center;">
+    </div>
+
+    <div style="text-align: center; font-weight: bold; margin-bottom: 25px;">
+        <p style="margin: 0 0 5px 0; font-size: 16px; text-decoration: underline;">ANEXO I</p>
+        <p style="margin: 0; font-size: 16px; text-decoration: underline;">HISTÓRICO DE CARGA HORÁRIA DOCENTE</p>
+    </div>
+
+    <div style="margin-bottom: 20px; font-size: 14px;">
+        <div style="margin-bottom: 12px;">
+            <span style="font-weight: bold;">Docente:</span>
+            <input type="text" id="docente" name="docente" style="width: 85%; border: none; border-bottom: 1px solid #000; outline: none; padding-left: 5px;" placeholder="XXX">
+        </div>
+        
+        <div style="margin-bottom: 12px; display: flex; gap: 20px;">
+            <div>
+                <span style="font-weight: bold;">Categoria:</span>
+                <input type="text" id="categoria" name="categoria" style="width: 150px; border: none; border-bottom: 1px solid #000; outline: none; padding-left: 5px;">
+            </div>
+            <div>
+                <span style="font-weight: bold;">Matrícula:</span>
+                <input type="text" id="matricula" name="matricula" style="width: 150px; border: none; border-bottom: 1px solid #000; outline: none; padding-left: 5px;">
+            </div>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <span style="font-weight: bold;">Regime de Trabalho:</span>
+            <span style="margin-left: 10px;">
+                <input type="checkbox" id="horaAula" name="horaAula" value="hora-aula"> hora-aula
+            </span>
+            <span style="margin-left: 20px;">
+                <input type="checkbox" id="regimeTrabalho" name="regimeTrabalho" value="jornada"> Regime de jornada nos termos da Portaria GDS 58/2008
+            </span>
+        </div>
+    </div>
+
+    <p style="font-size: 14px; margin-bottom: 15px;">Carga horária indeterminada* na unidade Sede e nas demais Fatecs</p>
+
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 8px; font-size: 14px;">
+        <thead>
+            <tr>
+                <th style="border: 1px solid #000; padding: 6px; text-align: left; width: 30%;">Disciplina</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: left; width: 15%;">Carga horária</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: left; width: 12%;">Turno</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: left; width: 28%;">Curso ou Departamento</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: left; width: 15%;">FATEC</th>
+            </tr>
+        </thead>
+        <tbody>
+            <script>
+                for (let i = 0; i < 10; i++) {
+                    document.write(`
+                        <tr style="height: 28px;">
+                            <td style="border: 1px solid #000; padding: 2px;"><input type="text" name="disciplina_${i}" style="width: 98%; border: none; outline: none; font-family: Arial; font-size: 13px;"></td>
+                            <td style="border: 1px solid #000; padding: 2px;"><input type="text" name="ch_${i}" style="width: 98%; border: none; outline: none; font-family: Arial; font-size: 13px;"></td>
+                            <td style="border: 1px solid #000; padding: 2px;"><input type="text" name="turno_${i}" style="width: 98%; border: none; outline: none; font-family: Arial; font-size: 13px;"></td>
+                            <td style="border: 1px solid #000; padding: 2px;"><input type="text" name="curso_${i}" style="width: 98%; border: none; outline: none; font-family: Arial; font-size: 13px;"></td>
+                            <td style="border: 1px solid #000; padding: 2px;"><input type="text" name="fatec_${i}" style="width: 98%; border: none; outline: none; font-family: Arial; font-size: 13px;"></td>
+                        </tr>
+                    `);
+                }
+            </script>
+            <tr style="font-weight: bold; height: 28px;">
+                <td style="border: 1px solid #000; padding: 6px; text-align: left;">TOTAL</td>
+                <td style="border: 1px solid #000; padding: 2px;"><input type="text" id="total_ch" name="disciplina" style="width: 98%; border: none; outline: none; font-weight: bold; font-family: Arial; font-size: 13px;"></td>
+                <td style="border: 1px solid #000; padding: 2px;"><input type="text" id="total_turno" name="turno" style="width: 98%; border: none; outline: none; font-weight: bold; font-family: Arial; font-size: 13px;"></td>
+                <td style="border: 1px solid #000; padding: 2px;"><input type="text" id="total_curso" name="curso" style="width: 98%; border: none; outline: none; font-weight: bold; font-family: Arial; font-size: 13px;"></td>
+                <td style="border: 1px solid #000; padding: 2px;"><input type="text" id="total_fatec" name="fatec" style="width: 98%; border: none; outline: none; font-weight: bold; font-family: Arial; font-size: 13px;"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p style="font-size: 12px; margin-top: 5px; margin-bottom: 30px;">*Preencher somente as disciplinas com carga horária indeterminada</p>
+
+    <div style="margin-bottom: 50px; font-size: 14px; text-align: left;">
+        <span style="font-weight: bold;">Local e data:</span><br>
+        <input type="text" id="local_data" name="local_data" style="width: 100%; border: none; border-bottom: 1px solid #000; outline: none; margin-top: 5px;">
+    </div>
+
+    <div style="font-size: 14px; margin-top: 60px; font-family: Arial, sans-serif; position: relative; padding-left: 60px;">
+        
+        <div style="margin-bottom: 35px; margin-left: 170px;">
+            <div style="margin-bottom: 4px;">
+                <select id="generoChefe" name="generoChefe" style="color: #4169E1; font-weight: bold; border: none; background: transparent; outline: none; font-family: Arial; font-size: 14px; cursor: pointer;">
+                            <option value="Sr.">Sr.</option>
+                            <option value="Sra.">Sra.</option>
+                        </select>
+                <span style="color: #4169E1; font-weight: bold;"><input type="text" id="nomeChefe" name="nomeChefe" style="width: 100px; border: none; border-bottom: 1px dashed #4169E1; color: #4169E1; outline: none; font-weight: bold; text-align: center;" placeholder="XXX"></span>
+            
+            </div>
+            <div style="font-weight: bold; line-height: 1.4; margin-left: -110px;">
+            </div>
+        </div>
+        
+        <div style="margin-left: 0px;">
+            <div style="margin-bottom: 4px;">
+                <span style="color: #4169E1; font-weight: bold;">Prof(a). <input type="text" id="nomeProfessor" name="nomeProfessor" style="width: 100px; border: none; border-bottom: 1px dashed #4169E1; color: #4169E1; outline: none; font-weight: bold; text-align: center;" placeholder="XXX"></span>
+            </div>
+            <div style="font-weight: bold; line-height: 1.4; margin-left: 40px;">
+                Chefe de Serviço Administrativo e Financeiro<br>
+                Coordenador da Faculdade
+            </div>
+        </div>
+
+    </div>
+
+</form>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
