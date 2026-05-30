@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDForms - Anexo IX</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="anexo.css" />
+    <link rel="icon" type="image/x-icon" href="/images/annexe_favicon.png" />
+    <script src="anexo.js" defer></script>
+    <script src="annex-verification/anexo-ix-validation.js" defer></script>
+  </head>
+  <body>
+    <header id="header">
+      <div id="header_left">
+        <img src="../images/sao_paulo.png" alt="São Paulo" id="img_sao_paulo" />
+      </div>
+      <div id="header_right">
+        <img
+          src="../images/fatec_zona_leste.png"
+          alt="Fatec Zona Leste"
+          id="img_fatec"
+        />
+        <img
+          src="../images/logo_pdforms.png"
+          alt="Logo do PDForms"
+          id="img_logo"
+        />
+      </div>
+    </header>
+    <hr />
+    <main class="page">
+      <section class="panel">
+        <header class="panel__header">
+          <h1>Anexo-IX</h1>
+        </header>
+
+        <div class="panel__topbar">
+          <button type="button" id="btnBack" class="btn btn-secondary">
+            Voltar
+          </button>
+          <button type="button" id="btnClear" class="btn btn-secondary">
+            Limpar Formulário
+          </button>
+        </div>
+
+        <section class="form-section" id="formSection">
+          <form id="annexForm" novalidate>
+            <div class="inline-row mb-10">
+              <label>FACULDADE DE TECNOLOGIA DE</label>
+              <input type="text" name="faculdade" class="input-grow" />
+            </div>
+
+            <div class="inline-row">
+              <label>Número do edital:</label>
+              <input
+                type="text"
+                name="edital_num"
+                class="input-xs"
+                placeholder="Nº"
+              />
+              <input
+                type="text"
+                name="edital_ano"
+                class="input-sm"
+                placeholder="ano"
+              />
+            </div>
+
+            <!-- Nome completo do docento -->
+            <div class="member-group">
+              <p class="member-label">Nome completo do docente:</p>
+              <div class="member-row">
+                <input
+                  type="text"
+                  name="docente_name"
+                  class="member-name"
+                  data-required
+                />
+                <span class="rg-label">RG:</span>
+                <input type="text" name="docente_rg" class="rg-input" />
+              </div>
+            </div>
+
+            <!-- Data final -->
+            <div class="date-footer-row">
+              <span class="date-city">São Paulo</span>
+              <input type="date" name="data" data-required />
+            </div>
+
+            <!-- Coordenador -->
+            <div class="member-group">
+              <p class="member-label">Prof(a). coordenador(a) da Fatec:</p>
+              <div class="member-row">
+                <input
+                  type="text"
+                  name="coordenador_name"
+                  class="member-name"
+                  data-required
+                />
+                <span class="rg-label">RG:</span>
+                <input type="text" name="coordenador_rg" class="rg-input" />
+              </div>
+            </div>
+
+            <!-- botao salvar -->
+            <div class="submit-row">
+              <button type="submit" class="btn btn-primary btn-save">
+                Salvar
+              </button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+    <footer>
+      <div id="footer_images">
+        <img src="..\images\sao_paulo.png" alt="São Paulo" />
+        <a
+          href="https://github.com/DanTheBrazuca/PDForms"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="..\images\github.png" alt="GitHub" id="img_github" />
+        </a>
+      </div>
+      <div id="sobre">
+        <h3>Sobre:</h3>
+        <ul>
+          <li>Bernardo Vitorio</li>
+          <li>Daniel ALves</li>
+          <li>Kevin Freire</li>
+          <li>Matheus Ciappina</li>
+          <li>Vitor Evangelista</li>
+        </ul>
+        <p>Somos alunos da Fatec Zona Leste.</p> 
+        <p>Este é o nosso primeiro projeto interdisciplinar.</p>
+      </div>
+    </footer>
+  </body>
+</html>

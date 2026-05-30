@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDForms - Anexo II</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="anexo.css" />
+    <link rel="icon" type="image/x-icon" href="/images/annexe_favicon.png" />
+    <script src="anexo.js" defer></script>
+    <script src="annex-verification/anexo-ii-validation.js" defer></script>
+  </head>
+  <body>
+    <header id="header">
+      <div id="header_left">
+        <img src="../images/sao_paulo.png" alt="São Paulo" id="img_sao_paulo" />
+      </div>
+      <div id="header_right">
+        <img
+          src="../images/fatec_zona_leste.png"
+          alt="Fatec Zona Leste"
+          id="img_fatec"
+        />
+        <img
+          src="../images/logo_pdforms.png"
+          alt="Logo do PDForms"
+          id="img_logo"
+        />
+      </div>
+    </header>
+    <hr />
+
+    <main class="page">
+      <section class="panel">
+        <header class="panel__header">
+          <h1>Anexo-II</h1>
+        </header>
+
+        <div class="panel__topbar">
+          <button type="button" id="btnBack" class="btn btn-secondary">
+            Voltar
+          </button>
+          <button type="button" id="btnClear" class="btn btn-secondary">
+            Limpar Formulário
+          </button>
+        </div>
+
+        <section class="form-section">
+          <form id="annexForm" novalidate>
+            <!-- Faculdade -->
+            <div class="inline-row">
+              <label for="faculdade">FACULDADE DE TECNOLOGIA DE</label>
+              <input
+                type="text"
+                name="faculdade"
+                class="input-grow"
+                placeholder="Nome da faculdade"
+                data-required
+              />
+            </div>
+
+            <!-- Número da portaria -->
+            <div class="inline-row" style="margin-top: 14px">
+              <label for="portaria_num">Número da portaria:</label>
+              <input
+                type="text"
+                name="portaria_num"
+                class="input-xs"
+                placeholder="Nº"
+                data-required
+              />
+              <input
+                type="text"
+                name="portaria_ano"
+                class="input-sm"
+                placeholder="ano"
+                data-required
+              />
+              <label for="portaria_data" class="inline-label">de</label>
+              <input type="date" name="portaria_data" class="input-md" data-required/>
+            </div>
+
+            <!--Coordenador-->
+            <p class="section-heading" style="margin-top: 18px">
+              Gênero do coordenador:
+            </p>
+            <div class="options-group">
+              <label class="option-item">
+                <input
+                  type="radio"
+                  name="coordenador_genero"
+                  value="m"
+
+                />
+                Masculino
+              </label>
+              <label class="option-item">
+                <input
+                  type="radio"
+                  name="coordenador_genero"
+                  value="f"
+                />
+                Feminino
+              </label>
+              </div>
+            <!-- Artigo 1º -->
+            <p class="section-heading" style="margin-top: 20px">Artigo 1º:</p>
+            <div class="inline-row">
+              <label for="edital_num">Número do edital</label>
+              <input
+                type="text"
+                name="edital_num"
+                class="input-xs"
+                placeholder="Nº"
+                data-required
+              />
+              <input
+                type="text"
+                name="edital_ano"
+                class="input-sm"
+                placeholder="ano"
+                data-required
+              />
+              <span class="inline-label">Curso:</span>
+              <input
+                type="text"
+                name="curso"
+                class="input-grow"
+                placeholder="Curso"
+                data-required
+              />
+            </div>
+
+            <!-- Artigo 2º -->
+            <p class="section-heading" style="margin-top: 20px">Artigo 2º:</p>
+
+            <!-- Membro 1 -->
+            <div class="member-group">
+              <p class="member-label">Membro 1 – Prof(a). Presidente:</p>
+              <div class="member-row">
+                <input
+                  type="text"
+                  name="membro1"
+                  class="member-name"
+                  placeholder="Membro 1"
+                  data-required
+                />
+                <span class="rg-label">RG:</span>
+                <input
+                  type="text"
+                  name="membro1_rg"
+                  class="rg-input"
+                  data-required
+                />
+              </div>
+            </div>
+
+            <!-- Membro 2 -->
+            <div class="member-group">
+              <p class="member-label">Membro 2 – Prof(a):</p>
+              <div class="member-row">
+                <input
+                  type="text"
+                  name="membro2"
+                  class="member-name"
+                  placeholder="Membro 2"
+                  data-required
+                />
+                <span class="rg-label">RG:</span>
+                <input
+                  type="text"
+                  name="membro2_rg"
+                  class="rg-input"
+                  data-required
+                />
+              </div>
+            </div>
+
+            <!-- Membro 3 -->
+            <div class="member-group">
+              <p class="member-label">Membro 3 – Técnico Administrativo:</p>
+              <div class="member-row">
+                <input
+                  type="text"
+                  name="membro3"
+                  class="member-name"
+                  placeholder="Membro 3"
+                  data-required
+                />
+                <span class="rg-label">RG:</span>
+                <input
+                  type="text"
+                  name="membro3_rg"
+                  class="rg-input"
+                  data-required
+                />
+              </div>
+            </div>
+
+            <!-- Suplentes -->
+            <p class="section-heading" style="margin-top: 20px">Suplentes:</p>
+
+            <div class="suplente-row">
+              <span class="suplente-label">Docente</span>
+              <input
+                type="text"
+                name="suplente_docente"
+                data-required
+              />
+            </div>
+
+            <div class="suplente-row">
+              <span class="suplente-label">Técnico administrativo</span>
+              <input
+                type="text"
+                name="suplente_tecnico"
+                data-required
+              />
+            </div>
+
+            <!-- Data final -->
+            <div class="date-footer-row">
+              <span class="date-city">São Paulo |</span>
+              <input type="date" name="data" data-required />
+            </div>
+
+            <div class="suplente-row">
+              <span class="suplente-label">Coordenador:</span>
+              <input
+                type="text"
+                name="coordenador_nome"
+                data-required
+              />
+            </div>
+
+            <div class="submit-row">
+              <button type="submit" class="btn btn-primary btn-save">
+                Salvar
+              </button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <div id="footer_images">
+        <img src="..\images\sao_paulo.png" alt="São Paulo" />
+        <a
+          href="https://github.com/DanTheBrazuca/PDForms"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="..\images\github.png" alt="GitHub" id="img_github" />
+        </a>
+      </div>
+      <div id="sobre">
+        <h3>Sobre:</h3>
+        <ul>
+          <li>Bernardo Vitorio</li>
+          <li>Daniel ALves</li>
+          <li>Kevin Freire</li>
+          <li>Matheus Ciappina</li>
+          <li>Vitor Evangelista</li>
+        </ul>
+        <p>Somos alunos da Fatec Zona Leste.</p> 
+        <p>Este é o nosso primeiro projeto interdisciplinar.</p>
+      </div>
+    </footer>
+  </body>
+</html>

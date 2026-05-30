@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDForms - Anexo VII</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="anexo.css" />
+    <link rel="icon" type="image/x-icon" href="/images/annexe_favicon.png" />
+    <script src="anexo.js" defer></script>
+    <script src="annex-verification/anexo-vii-validation.js" defer></script>
+  </head>
+  <body>
+    <header id="header">
+      <div id="header_left">
+        <img src="../images/sao_paulo.png" alt="São Paulo" id="img_sao_paulo" />
+      </div>
+      <div id="header_right">
+        <img
+          src="../images/fatec_zona_leste.png"
+          alt="Fatec Zona Leste"
+          id="img_fatec"
+        />
+        <img
+          src="../images/logo_pdforms.png"
+          alt="Logo do PDForms"
+          id="img_logo"
+        />
+      </div>
+    </header>
+    <hr />
+    <main class="page">
+      <section class="panel">
+        <header class="panel__header">
+          <h1>Anexo-VII</h1>
+        </header>
+
+        <div class="panel__topbar">
+          <button type="button" id="btnBack" class="btn btn-secondary">
+            Voltar
+          </button>
+          <button type="button" id="btnClear" class="btn btn-secondary">
+            Limpar Formulário
+          </button>
+        </div>
+
+        <section class="form-section" id="formSection">
+          <form id="annexForm" novalidate>
+            <!-- Faculdade -->
+            <div class="inline-row">
+              <label for="faculdade">FACULDADE DE TECNOLOGIA</label>
+              <input
+                type="text"
+                name="faculdade"
+                class="input-grow"
+                placeholder="Nome da faculdade"
+                data-required
+              />
+            </div>
+
+            <!-- Numero do Edital -->
+            <div class="inline-row" style="margin-top: 14px">
+              <label for="portaria_num">Número do edital:</label>
+              <input
+                type="text"
+                id="edital_num"
+                name="edital_num"
+                class="input-xs"
+                placeholder="Nº"
+              />
+              <input
+                type="text"
+                id="edital_ano"
+                name="edital_ano"
+                class="input-sm"
+                placeholder="ano"
+              />
+              <label for="edital_tempo" class="inline-label" required
+                >Tempo:</label
+              >
+              <select name="edital_tempo" id="edital_tempo" class="input-md">
+                <option value="" disabled selected>Selecionar</option>
+                <option value="DETERMINADO">Determinado</option>
+                <option value="INDETERMINADO">Indeterminado</option>
+              </select>
+            </div>
+
+            <!-- Tabela de Classificacao -->
+            <p class="section-heading">1 - Classificação/resultado:</p>
+            <div class="table-wrap">
+              <table class="horas-table table-v">
+                <thead>
+                  <tr>
+                    <th>Classif.</th>
+                    <th>Nome do Candidato</th>
+                    <th>RG do Candidato</th>
+                    <th>Aulas nesta Fatec</th>
+                    <th>Contrato</th>
+                    <th>Pontos</th>
+                    <th class="col-action"></th>
+                  </tr>
+                </thead>
+                <tbody id="tableRows"></tbody>
+              </table>
+            </div>
+            <div class="table-actions">
+              <button type="button" id="btnAddRow" class="btn btn-add">
+                +
+              </button>
+            </div>
+
+            <!-- Tabela de Classificacao -->
+            <p class="section-heading">2 - Indeferimento:</p>
+            <div class="table-wrap">
+              <table class="horas-table table-v">
+                <thead>
+                  <tr>
+                    <th>RG do Candidato</th>
+                    <th>Justificativa do indeferimento</th>
+                    <th class="col-action"></th>
+                  </tr>
+                </thead>
+                <tbody id="miniTableRows"></tbody>
+              </table>
+            </div>
+            <div class="table-actions">
+              <button type="button" id="btnAddMiniRow" class="btn btn-add">
+                +
+              </button>
+            </div>
+
+            <!-- Data final -->
+            <div class="date-footer-row">
+              <span class="date-city">São Paulo |</span>
+              <input type="date" name="data" data-required />
+            </div>
+
+            <!-- Presidente -->
+            <div class="member-group">
+              <p class="member-label">Prof(a). Presidente:</p>
+              <div class="member-row">
+                <input
+                  type="text"
+                  name="presidente_name"
+                  class="member-name"
+                  data-required
+                />
+                <span class="rg-label">RG:</span>
+                <input type="text" name="presidente_rg" class="rg-input" />
+              </div>
+            </div>
+
+            <!-- Prof(a) -->
+            <div class="member-group">
+              <p class="member-label">Prof(a).:</p>
+              <div class="member-row">
+                <input
+                  type="text"
+                  name="prof_name"
+                  class="member-name"
+                  data-required
+                />
+                <span class="rg-label">RG:</span>
+                <input type="text" name="prof_rg" class="rg-input" />
+              </div>
+            </div>
+
+            <!-- Tecnico administrativo -->
+            <div class="member-group">
+              <p class="member-label">Técnico Administrativo:</p>
+              <div class="member-row">
+                <input
+                  type="text"
+                  name="tecnico_name"
+                  class="member-name"
+                  data-required
+                />
+                <span class="rg-label">RG:</span>
+                <input type="text" name="tecnico_rg" class="rg-input" />
+              </div>
+            </div>
+
+            <!--botao salvar-->
+            <div class="submit-row">
+              <button type="submit" class="btn btn-primary btn-save">
+                Salvar
+              </button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+    <footer>
+      <div id="footer_images">
+        <img src="..\images\sao_paulo.png" alt="São Paulo" />
+        <a
+          href="https://github.com/DanTheBrazuca/PDForms"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="..\images\github.png" alt="GitHub" id="img_github" />
+        </a>
+      </div>
+      <div id="sobre">
+        <h3>Sobre:</h3>
+        <ul>
+          <li>Bernardo Vitorio</li>
+          <li>Daniel ALves</li>
+          <li>Kevin Freire</li>
+          <li>Matheus Ciappina</li>
+          <li>Vitor Evangelista</li>
+        </ul>
+        <p>Somos alunos da Fatec Zona Leste.</p> 
+        <p>Este é o nosso primeiro projeto interdisciplinar.</p>
+      </div>
+    </footer>
+  </body>
+</html>
