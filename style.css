@@ -83,7 +83,7 @@ hr {
 }
 
 .text_section h2 {
-  font-size: clamp(1rem, 2.5vw, 2.5rem);
+  font-size: clamp(1.25rem, 2.5vw, 2.5rem);
 }
 
 .text_section p {
@@ -240,6 +240,7 @@ a {
 
 #sobre {
   max-width: 500px;
+  text-align: left;
 }
 
 #sobre h3 {
