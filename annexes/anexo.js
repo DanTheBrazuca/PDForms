@@ -382,8 +382,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return { isValid: true, message: "Sucesso" };
   }
 
-  async function generatePDF(data) {
-    const response = await fetch('http://localhost:8080/api/pdf/gerar/viii', {
+  async function generatePDF(data, anexoNumber) {
+    const response = await fetch(`http://localhost:8080/api/pdf/gerar/${anexoNumber}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
@@ -443,8 +443,9 @@ document.addEventListener("DOMContentLoaded", () => {
     submitButton.disabled = true;
     submitButton.innerHTML = "Gerando PDF...";
     submitButton.classList.add("disabled");
+    const anexoNumber = submitButton.getAttribute("data-anexo-number");
 
-    const response = await generatePDF(data);
+    const response = await generatePDF(data, anexoNumber);
 
     if (response.ok) {
       const blob = await response.blob();
