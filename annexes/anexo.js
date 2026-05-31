@@ -288,7 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return { isValid: true, message: "" };
   }
 
-  function validateRequiredFields(form) {
+  async function validateRequiredFields(form) {
     clearValidationErrors(form);
     const requiredFields = Array.from(form.querySelectorAll("[data-required]"));
     const validatedNames = new Set();
@@ -337,59 +337,66 @@ document.addEventListener("DOMContentLoaded", () => {
   if (btnAddIndeferido)
     btnAddIndeferido.addEventListener("click", () => addIndeferido());
 
+  async function runFormValidations(form) {
+    let validationResult = { isValid: true, message: "Formulário válido" };
+    const title = document.title;
+  
+    // 1. Run specific Anexo validations
+    if (title.includes("Anexo I")) {
+      validationResult = window.validateAnexoI ? await window.validateAnexoI() : validationResult;
+    } else if (title.includes("Anexo II")) {
+      validationResult = window.validateAnexoII ? await window.validateAnexoII() : validationResult;
+    } else if (title.includes("Anexo III")) {
+      validationResult = window.validateAnexoIII ? await window.validateAnexoIII() : validationResult;
+    } else if (title.includes("Anexo V")) {
+      validationResult = window.validateAnexoV ? await window.validateAnexoV() : validationResult;
+    } else if (title.includes("Anexo VII")) {
+      validationResult = window.validateAnexoVII ? await window.validateAnexoVII() : validationResult;
+    } else if (title.includes("Anexo VIII")) {
+      validationResult = window.validateAnexoVIII ? await window.validateAnexoVIII() : validationResult;
+    } else if (title.includes("Anexo IX")) {
+      validationResult = window.validateAnexoIX ? await window.validateAnexoIX() : validationResult;
+    } else if (title.includes("Anexo X")) {
+      validationResult = window.validateAnexoX ? await window.validateAnexoX() : validationResult;
+    }
+  
+    // If the specific validation failed, return immediately
+    if (!validationResult.isValid) {
+      return validationResult;
+    }
+  
+    // 2. Run Generic Required Fields Validation
+    // (Adding await here just in case you ever make it async)
+    const genericResult = await validateRequiredFields(form);
+    if (!genericResult.isValid) {
+      return genericResult;
+    }
+  
+    // 3. Run Generic Numeric Fields Validation
+    const numericResult = await validateNumericFields(form);
+    if (!numericResult.isValid) {
+      return numericResult;
+    }
+  
+    // If it survives all checks, it's good to go!
+    return { isValid: true, message: "Sucesso" };
+  }
+
+  async function generatePDF(data) {
+    const response = await fetch('http://localhost:8080/api/pdf/gerar/viii', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    return response;
+  }
+
   // Submit e LocalStorage (Mantido e adaptado)
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Determinar qual função de validação usar baseada no título da página
-    let validationResult = { isValid: true, message: "Formulário válido" };
-
-    if (document.title.includes("Anexo I")) {
-      validationResult = window.validateAnexoI
-        ? window.validateAnexoI()
-        : validationResult;
-    } else if (document.title.includes("Anexo II")) {
-      validationResult = window.validateAnexoII
-        ? window.validateAnexoII()
-        : validationResult;
-    } else if (document.title.includes("Anexo III")) {
-      validationResult = window.validateAnexoIII
-        ? window.validateAnexoIII()
-        : validationResult;
-    } else if (document.title.includes("Anexo V")) {
-      validationResult = window.validateAnexoV
-        ? window.validateAnexoV()
-        : validationResult;
-    } else if (document.title.includes("Anexo VII")) {
-      validationResult = window.validateAnexoVII
-        ? window.validateAnexoVII()
-        : validationResult;
-    } else if (document.title.includes("Anexo VIII")) {
-      validationResult = window.validateAnexoVIII
-        ? window.validateAnexoVIII()
-        : validationResult;
-    } else if (document.title.includes("Anexo IX")) {
-      validationResult = window.validateAnexoIX
-        ? window.validateAnexoIX()
-        : validationResult;
-    } else if (document.title.includes("Anexo X")) {
-      validationResult = window.validateAnexoX
-        ? window.validateAnexoX()
-        : validationResult;
-    }
-    if (validationResult.isValid) {
-      const genericResult = validateRequiredFields(form);
-      if (!genericResult.isValid) {
-        validationResult = genericResult;
-      } else {
-        const numericResult = validateNumericFields(form);
-        if (!numericResult.isValid) {
-          return;
-        }
-      }
-    }
+    const validationResult = await runFormValidations(form);
     if (!validationResult.isValid) {
-      alert(`Erro na validação: ${validationResult.message}`);
       return;
     }
 
@@ -432,8 +439,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     localStorage.setItem(`pdforms-${document.title}`, JSON.stringify(data));
-    alert("Salvo com sucesso!");
-    showGeneratePopup();
+    const submitButton = document.getElementById("btnDownloadPDF");
+    submitButton.disabled = true;
+    submitButton.innerHTML = "Gerando PDF...";
+    submitButton.classList.add("disabled");
+
+    const response = await generatePDF(data);
+
+    if (response.ok) {
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${document.title}.pdf`;
+
+      submitButton.disabled = false;
+      submitButton.classList.remove("disabled");
+      submitButton.innerHTML = "Baixar PDF";
+      a.click();
+    } else {
+      submitButton.disabled = false;
+      submitButton.classList.remove("disabled");
+      submitButton.innerHTML = "Baixar PDF";
+      alert("Erro ao gerar o PDF");
+    }
   });
 
   function showGeneratePopup() {

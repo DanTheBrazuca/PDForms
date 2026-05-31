@@ -101,8 +101,8 @@
               <label class="option-item">
                 <input
                   type="radio"
-                  name="conformidade"
-                  value="Conformidade"
+                  name="statusConformidade"
+                  value="conforme"
                   data-required
                 />
                 Conformidade
@@ -110,8 +110,8 @@
               <label class="option-item">
                 <input
                   type="radio"
-                  name="conformidade"
-                  value="Inconformidade"
+                  name="statusConformidade"
+                  value="inconforme"
                   data-required
                 />
                 Inconformidade
@@ -180,8 +180,13 @@
 
             <!-- botao salvar -->
             <div class="submit-row">
-              <button type="submit" class="btn btn-primary btn-save">
-                Salvar
+              <span class="tooltip-wrapper" data-tooltip="Em breve. Use 'Baixar PDF'">
+                <button disabled id="btnSave" type="submit" class="btn btn-primary btn-save">
+                  Salvar
+                </button>
+              </span>
+              <button id="btnDownloadPDF" type="submit" class="btn btn-primary btn-save">
+                Baixar PDF
               </button>
             </div>
           </form>

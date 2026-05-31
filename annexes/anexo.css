@@ -359,6 +359,7 @@ select {
 .submit-row {
   display: flex;
   justify-content: center;
+  gap: 10px;
   margin-top: 18px;
 }
 
@@ -366,6 +367,56 @@ select {
   min-width: 180px;
   padding: 12px 18px;
   font-size: 1rem;
+  :disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: var(--red);
+  }
+}
+
+.btn-save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--red);
+}
+
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+  cursor: not-allowed;
+}
+
+.tooltip-wrapper button:disabled {
+  pointer-events: none; 
+}
+
+.tooltip-wrapper:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 115%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--text);
+  color: var(--white);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: var(--shadow);
+  pointer-events: none;
+}
+
+.tooltip-wrapper:hover::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--text) transparent transparent transparent;
+  z-index: 10;
 }
 
 .bottom-grid {
