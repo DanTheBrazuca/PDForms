@@ -378,7 +378,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return numericResult;
     }
   
-    // If it survives all checks, it's good to go!
     return { isValid: true, message: "Sucesso" };
   }
 
@@ -397,6 +396,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const validationResult = await runFormValidations(form);
     if (!validationResult.isValid) {
+      alert(validationResult.message);
       return;
     }
 
