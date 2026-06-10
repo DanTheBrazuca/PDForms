@@ -396,7 +396,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const validationResult = await runFormValidations(form);
     if (!validationResult.isValid) {
-      //alert(validationResult.message);
+      alert(validationResult.message);
       return;
     }
 
