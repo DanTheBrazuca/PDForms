@@ -8,6 +8,21 @@ function validateAnexoII() {
 
   const requiredFields = [
     { name: "faculdade", label: "Faculdade" },
+    { name: "portaria_num", label: "Numero da portaria"},
+    { name: "portaria_ano", label: "Ano da portaria"},
+    { name: "portaria_data", label: "Data da portaria"},
+    { name: "coordenador_genero", label: "Genero do coordenador"},
+    { name: "edital_num", label: "Numero do edital"},
+    { name: "edital_ano", label: "Ano do edital"},
+    { name: "curso", label: "Curso"},
+    { name: "membro1", label: "Membro 1"},
+    { name: "membro1_rg", label: "RG do membro 1"},
+    { name: "membro2", label: "Membro 2"},
+    { name: "membro2_rg", label: "RG do membro 2"},
+    { name: "membro3", label: "Membro 3"},
+    { name: "membro3_rg", label: "RG do membro 3"},
+    { name: "suplente_docente", label: "Suplente docente"},
+    { name: "suplente_tecnico", label: "Suplente tecnico"},
     { name: "data", label: "Data" },
   ];
 
