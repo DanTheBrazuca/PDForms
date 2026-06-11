@@ -601,8 +601,13 @@
 
             <!-- Salvar -->
             <div class="submit-row">
-              <button type="submit" class="btn btn-primary btn-save">
-                Salvar
+              <span class="tooltip-wrapper" data-tooltip="Em breve. Use 'Baixar PDF'">
+                <button disabled id="btnSave" type="submit" class="btn btn-primary btn-save">
+                  Salvar
+                </button>
+              </span>
+              <button id="btnDownloadPDF" data-anexo-number="iii" type="submit" class="btn btn-primary btn-save">
+                Baixar PDF
               </button>
             </div>
           </form>
