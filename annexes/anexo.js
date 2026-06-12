@@ -382,7 +382,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function generatePDF(data, anexoNumber) {
-    const response = await fetch(`http://localhost:8080/api/pdf/gerar/${anexoNumber}`, {
+    const response = await fetch(`https://pdforms-backend.onrender.com/api/pdf/gerar/${anexoNumber}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
